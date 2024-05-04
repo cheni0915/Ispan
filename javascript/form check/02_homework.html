@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/02_homework.css">
+  </head>
+  <body>
+    <form action="#" method="get" enctype="multipart/form-data">
+      <fieldset>
+        <legend>Form Check</legend>
+        <!-- 姓名 -->
+        <div class="q1">
+          <label for="usersName" class="t1">姓名 :</label>
+          <input
+            type="text"
+            name="users
+            Name"
+            value=""
+            id="usersName"
+            placeholder="請輸入姓名"
+          />
+          <span id="spName"></span>
+          <br/>    
+          <span class="text_style"> ( 1.不可空白 2. 至少兩個字以上 3. 必須全部為中文字 ) </span>
+        </div>
+
+        <!-- 密碼 -->
+        <div class="q1">
+          <label for="usersPassword" class="t1">密碼 :</label>
+          <input
+            type="password"
+            name="usersPassword"
+            value=""
+            id="usersPassword"
+            placeholder="請輸入密碼"
+          />
+          <span id="spPassword"></span>
+          <br>
+          <span class="text_style"> ( 1.不可空白 2. 至少6個字且必須包含英數字、特殊字元[!@#$%^&*] ) </span>
+        </div>
+
+        <!-- 日期 -->
+        <div class="q1">
+            <label for="datetime" class="t1">日期 :</label>
+            <input
+              type="text"
+              name="datetime"
+              value=""
+              id="datetime"
+              placeholder="2010/01/01"
+            />
+            <span id="spDatetime"></span>
+            <br>
+            <span class="text_style"> 格式:西元年/月/日 (yyyy/mm/dd)</span>
+          </div>
+      </fieldset>
+    </form>
+
+    <script>
+        document.getElementById("usersName").addEventListener("blur", checkName);
+        document.getElementById("usersPassword").addEventListener("blur", checkPassword);
+        document.getElementById("datetime").addEventListener("blur", checkDatetime);
+
+        // 姓名
+        // 1.不可空白
+        // 2.至少兩個字以上
+        // 3.必須全部為中文字
+        function checkName () {
+            let theNameObj = document.getElementById("usersName");
+            // console.log(theNameObj);
+            let theNameObjVal = theNameObj.value;
+            // console.log(theNameObjVal);
+            // console.log(typeof theNameObjVal);      // string
+
+            let theNameObjValLen = theNameObjVal.length;
+            // console.log(theNameObjValLen);
+
+            // .charCodeAt 回傳指定索引的Unicode編碼
+            let chCodeAt = theNameObjVal.charCodeAt(0);
+            console.log(chCodeAt);                          // 一 => 19968
+
+            // 判斷訊息顯示位置
+            let spName = document.getElementById("spName");
+
+            // 驗證
+            if (theNameObjValLen == "") {
+                // 錯誤圖片放入，src內容需改成''，以免和雙引號起衝突
+                spName.innerHTML = "<img src='./images/error.png'> 姓名不可空白";
+            } else if (theNameObjValLen < 2)    {
+                spName.innerHTML = "<img src='./images/error.png'> 姓名至少兩個字以上";
+            } else {
+                // 全字庫網址: http://www.cns11643.gov.tw/pageView.jsp?ID=9
+                // 0x4e00  16進制
+                // Ｉ區	中日韓漢字區	4E00 ～ 9FFF	20,992編碼位
+                // 中文字範圍
+                if (chCodeAt >= 0x4e00 && chCodeAt <=0x9fff ) 
+                spName.innerHTML ="<img src='./images/correct.png'> 輸入正確";
+                else
+                spName.innerHTML ="<img src='./images/error.png'> 姓名必須全部為中文"
+            }
+        }
+        
+        
+        // 密碼
+        // 1.不可空白
+        // 2.至少6個字以上
+        // 3.並且包含英數字、特殊字元[!@#$%^&*]
+        function checkPassword () {
+            let thePwdObj = document.getElementById("usersPassword");
+            // console.log(thePwdObj);
+
+            let thePwdObjVal = thePwdObj.value;
+            // console.log(thePwdObjVal);    
+            // console.log(typeof thePwdObjVal); 
+
+            //判斷元素值是否為空白，密碼長度是否大於6
+            //如果長度是否大於6，接著還須判斷是否包含字母、數字、特殊符號
+            let thePwdObjValLen = thePwdObjVal.length;
+            console.log(thePwdObjValLen);
+
+            // 判斷訊息顯示位置
+            let spPwd = document.getElementById("spPassword");
+            
+            // 宣告變數
+            let ch, flag1=false,flag2=false,flag3=false;
+
+
+            // 驗證
+            if (thePwdObjVal == "") {
+                // 錯誤圖片放入
+                spPwd.innerHTML = "<img src='./images/error.png'> 密碼不可為空白";
+            } else if (thePwdObjValLen < 6) {
+                spPwd.innerHTML= "<img src='./images/error.png'> 密碼長度至少6個字且必須包含英數字、特殊字元[!@#$%^&*]";
+            } else  {
+                // 檢查輸入密碼是否有大於等於6個字元
+                // 檢查使用者是否使用英文.數字.特殊字元
+
+                // 迴圈檢查使用者輸入的每個字元
+                for (let i = 0 ; i < thePwdObjValLen; i++) {
+                    // 檢查輸入字元是否包含英文.數字
+                    // 字串     "A" "Z" "0" "9"  會使用ASCII 轉換成數字比較
+                    // 16進位   41  5A  30  39
+                    // 輸入的字元統一大小寫進行檢查
+                    chAt = thePwdObjVal.charAt(i).toUpperCase();
+                    console.log(chAt);
+
+                    // 檢查特殊字元
+                    chCodeAt = thePwdObjVal.charCodeAt(i)
+                    console.log(chCodeAt);
+
+
+                    // 檢查輸入字元是否包含英文
+                    if(chAt>="A" && chAt <= "Z")
+                        flag1 = true;
+                    // 檢查輸入字元是否包含數字
+                    else if (chAt>="0" && chAt <="9")
+                        flag2 = true;
+
+
+                    // 檢查輸入字元是否包含特殊字元
+                    // 0x4e00  16進制
+                    // 全字庫網址: http://www.cns11643.gov.tw/pageView.jsp?ID=9
+                    
+                    // 基本拉丁字母
+                    // 共有95個字元，其中52個屬於拉丁字母，剩下的43個屬於基本字元。 
+                    // 有33個字元被定義為「ASCII 標點及符號」，有時也被稱為「ASCII 特殊字元」。
+                    else if (chCodeAt>=0x20 && chCodeAt<=0x7E)
+                        flag3 = true;
+
+                    // 需要三個條件同時成立
+                    if(flag1 && flag2 && flag3) 
+                        break;
+                }
+                if(flag1 && flag2 && flag3)
+                    spPwd.innerHTML = "<img src='./images/correct.png'> 輸入正確";
+                else
+                    spPwd.innerHTML= "<img src='./images/error.png'> 密碼必須包含英數字、特殊字元[!@#$%^&*]";
+            }  
+        }
+
+
+        // 日期
+        // 格式:西元年/月/日 (yyyy/mm/dd)
+        function checkDatetime () {
+            let theDatetimeVal = document.getElementById("datetime").value;
+            console.log(theDatetimeVal);                    // 2020/10/10
+            console.log(typeof theDatetimeVal);             // string
+
+            // 輸入時間必須為xxxx/xx/xx格式
+            // 經由split("/")切割
+
+            // 2023/12/10
+            let splitDatetime = theDatetimeVal.split("/");
+            console.log(splitDatetime);                        // ['2020', '10', '10']  
+            
+            let inputYear = splitDatetime[0];
+            console.log(inputYear);
+            // console.log(typeof inputYear);                  // string
+            let inputMonth = splitDatetime[1];
+            console.log(inputMonth);
+            let inputDate = splitDatetime[2];
+            console.log(inputDate);
+
+
+            // 正確時間
+            // let d = new Date();
+            // console.log(d);                                        // Sun Dec 10 2023 00:00:00 GMT+0800
+
+            let correctDatetime = new Date(theDatetimeVal);
+            console.log(correctDatetime);                             // Sat Oct 10 2020 00:00:00 GMT+0800 (台北標準時間)
+            
+            let correctYear = correctDatetime.getFullYear();
+            console.log(correctYear);                      
+            let correctMonth = correctDatetime.getMonth() + 1;
+            console.log(correctMonth);       
+            let correctDate = correctDatetime.getDate();
+            console.log(correctDate);    
+
+            // 判斷訊息顯示位置
+            let spDatetime = document.getElementById("spDatetime");
+
+
+            // 驗證
+            // 輸入時間必須為存在日期 => 輸入時間要與正確時間相符
+            if (inputYear == correctYear && inputMonth == correctMonth && inputDate == correctDate ) {
+                spDatetime.innerHTML = "<img src='./images/correct.png'> 輸入正確";
+            }else {
+                spDatetime.innerHTML = "<img src='./images/error.png'> 無此日期";
+            }
+        }
+
+    </script>
+  </body>
+</html>

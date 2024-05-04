@@ -1,0 +1,60 @@
+/* 控制項盒子 */
+form {
+    width:600px;
+    margin: auto;
+}
+.q1 {
+    width: 450px;
+    /* border-bottom: 2px dashed gray; */
+    padding-bottom: 20px;
+    margin: 20px;
+}
+
+/* 項目標題文字對齊 */
+.t1 {
+    width: 45px;
+    float: left;
+}
+
+/* 按鈕對齊 */
+.btn {
+    width: 450px;
+    text-align: center;
+    margin-top: 20px;
+}
+.box {
+    margin: 10px;
+}
+
+/* fieldset 表單群組 */
+fieldset {
+    width: 500px;
+    border: 2px solid red;
+    border-radius: 20px;
+    
+}
+/* legend 標題 */
+legend {
+    text-align: left;
+    padding: 5px;
+    font-weight: bold;
+    color: blue;
+}
+
+.text_style {
+    color: gray;
+    font-size: 14px;
+}
+
+/* fieldset 控制項盒子最後一層下底線刪除*/
+/* 方法一 */
+/* fieldset>:last-child {
+    border-bottom: 0;
+    padding-bottom: 0   ;
+} */
+
+/* 方法二 */
+/* :not(:last-child) 除了最後一個以外，其他都會含有*/
+.q1:not(:last-child) {
+    border-bottom: 2px dashed gray;
+}

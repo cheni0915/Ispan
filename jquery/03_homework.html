@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台灣行政郵遞區號</title>
+    <style>
+        header {
+            text-align: center;
+        }
+        main {
+            display: flex;
+            justify-content: center;
+        }
+        #zip-table{
+            border-collapse: collapse;
+        }
+        .selectDiv {
+            margin: 0 50px;
+        }
+        #zip-table td {
+            border: 1px solid blue;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>台灣行政郵遞區號</h1>
+        </header>
+        <main>
+            <div class="tableDiv">
+                <table id="zip-table">
+                </table>
+            </div>
+            <div class="selectDiv">
+                <select id="city">
+                    <option value="">請選擇</option>
+                </select>
+                <select id="districts">
+                    <option value="">請選擇</option>
+                </select>
+            </div>
+            
+        </main>
+
+    </div>
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script src="./js/taiwan_districts.js"></script>
+    <script>
+        // console.log(data);              // (24) [{…}, {…}
+        
+        $.each(data,function(index,city){
+                // console.log(city);     // Object => {districts: Array(12), name: '臺北市'}... => districts:(12)[ ] name:"台北市"
+                // console.log(city.districts);    
+                // console.log(city.name); //臺北市
+                $.each(city.districts,function(index,district){
+                    // console.log(district);     // {zip: '100', name: '中正區'}
+                    $("#zip-table").append(`<tr><td>${city.name}</td><td>${district.zip}</td><td>${district.name}</td></tr>`);
+                    $("#districts").append(`<option>${district.zip}${district.name}</option>`);
+                });
+                
+                $("#city").append(`<option>${city.name}</option>`)
+        });
+
+        
+        // 選擇縣市 =>  列表zip.district會改變
+        // EX: 台北市 => 12筆資料
+        $("#city").change(function(){
+            
+            let optCity = $(this).val();
+            // console.log(optCity);
+
+            // 清空地區欄位資料
+            $("#districts").empty();
+
+            $.each(data,function(index,city){
+                // console.log(city.name);
+                if(city.name === optCity){
+                    $.each(city.districts, function(index, district){
+                        $("#districts").append(`<option>${district.zip}${district.name}</option>`);
+                    });
+                };
+            });
+        });
+
+
+
+
+
+
+        // json檔案格式
+        // data = [
+        //     {
+        //         "districts":[
+        //             {
+        //                 "zip": "100",
+        //                 "name": "中正區"
+        //             },
+        //             {
+        //                 "zip": "103",
+        //                 "name": "大同區"
+        //             }
+        //         ],
+        //         "name": "臺北市"
+        //     },
+        //     {
+        //         "districts":[
+        //             {
+        //                 "zip": "200",
+        //                 "name": "仁愛區"
+        //             },
+        //             {
+        //                 "zip": "201",
+        //                 "name": "信義區"
+        //             }
+        //         ],
+        //         "name": "基隆市"
+        //     }
+        // ]
+        
+        // $.ajax({
+        //     method: "get",
+        //     url: "js/taiwan_districts.js",
+        //     dataType: "json",
+        //     success: function(data){
+        //         console.log(123);
+        //         console.log(data);
+        //         console.log(123);
+        //     }
+        // });
+    </script>
+</body>
+</html>

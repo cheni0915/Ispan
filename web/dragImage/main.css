@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    width: 800px;
+    height: 100vh;
+    margin: 0 auto;
+    border: 2px solid pink;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 水平置中 */
+    align-items: center; /* 垂直置中 */
+  }
+
+  #dropZone {
+    width: 100%; /* 填滿父容器 */
+    max-width: 600px; /* 最大寬度，可根據需求調整 */
+    height: 500px; /* 假設高度為500px */
+    border: 2px dashed #ccc; /* 拖放區域的虛線邊框 */
+    display: flex;
+    justify-content: center; /* 讓內容水平置中 */
+    align-items: center; /* 讓內容垂直置中 */
+  }
+  .buttonZone {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    background-color: pink;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  #fileName {
+    position: absolute;
+    top: 0;
+  }
+
+  #imageDiv {
+    width: 50%;
+    height: 50%;
+  }
+
+  #image {
+    width: 100%; /* 圖片寬度填滿外層容器 */
+    height: auto; /* 根據寬度自動調整高度，保持圖片比例 */
+  }

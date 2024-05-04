@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cama | 關於我們</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="public/css/style.css" />
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <main class="flex-grow-1 flex-shrink-1 mb-5">
+      <!-- navbar start -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+          <!-- logo -->
+          <a class="navbar-brand" href="index.html">Cama</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- 導覽列連結 -->
+          <!-- ms 靠右 -->
+          <!-- 一般預設為手機板 -->
+          <!-- lg(992px)  -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="about.html"
+                  >關於我們</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="product-list.html">產品列表</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="store.html">門市資訊</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="product-online.html">線上商品</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="faq.html">常見問題</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">聯絡我們</a>
+              </li>
+              <!-- lg螢幕隱藏 手機顯示-->
+              <li class="nav-item d-block d-lg-none">
+                <!-- <a class="nav-link" href="login.html">會員登入</a> -->
+                <!-- javascript:是表示在觸發預設動作時，執行一段JavaScript程式碼，而javascript:; 表示什麼都不執行，這樣點擊時就沒有任何反應。  -->
+                <a
+                  class="nav-link"
+                  href="javascript:;"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                  >會員登入</a
+                >
+              </li>
+              <li class="nav-item d-block d-lg-none">
+                <a class="nav-link" href="cart.html">購物車</a>
+              </li>
+            </ul>
+
+            <!-- fs-3 字型放大 -->
+            <!-- me-3 右邊界 -->
+            <!-- 手機板為 flex-column -->
+
+            <div class="d-flex flex-column flex-lg-row">
+              <!-- 小人 icon -->
+              <!-- display:none 隱藏-->
+              <!-- d-none 為手機螢幕的情況 -->
+              <a
+                href="javascript:;"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                class="d-none d-lg-block me-3 link-dark"
+              >
+                <i class="bi bi-person-fill fs-3"></i>
+              </a>
+
+              <!-- 購物車icon -->
+              <!-- position top只有0.50.100可調，需要自訂義微調 -->
+
+              <a
+                href=""
+                class="d-none d-lg-block me-3 link-dark position-relative"
+              >
+                <i class="bi bi-cart-fill fs-3"></i>
+                <span
+                  class="position-absolute top-0 start-100 cart-top translate-middle badge rounded-pill bg-danger"
+                  >5 <span class="visually-hidden">unread messages</span></span
+                >
+              </a>
+              <!-- FB icon -->
+              <a href="" class="me-3">
+                <i class="bi bi-facebook link-facebook fs-3"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- navbar end -->
+
+      <!-- 麵包屑 start -->
+      <!-- 元件 麵包屑 (Breadcrumb) -->
+      <div class="bg-light mb-5 pt-3 pb-1 px-3">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+            <li class="breadcrumb-item active" aria-current="page">關於我們</li>
+          </ol>
+        </nav>
+      </div>
+      <!-- 麵包屑 end -->
+
+      <!-- .container>.row>.col-12.col-md-6+.col-12.col-md-6^.row -->
+      <div class="container">
+        <!-- 第一組 start -->
+        <div class="row">
+          <h1 class="col-12 text-center mb-3">從一顆生豆 ‧ 到一杯咖啡</h1>
+          <div class="col-12 col-md-6">
+            <img class="w-100" src="public/images/about_image01.jpg" alt="" />
+          </div>
+          <div class="col-12 col-md-6 d-flex align-items-center">
+            我們深知一杯美味咖啡的各項環節與要素。
+            所以我們選擇在店內精準演繹整個製作流程。
+            手工挑豆、得宜烘焙、即時研磨、黃金萃取與吧台手藝....
+            從一顆生豆到一杯咖啡，最透明的製作流程，提供最真誠的賞味體驗。
+            在cama咖啡研究室的把關下， 六位國際杯測師的味蕾， 就是您品質的堡壘。
+            對於您手中的咖啡品質，我們有著100%的堅持。
+          </div>
+        </div>
+        <!-- 第一組 end -->
+        <!-- 第二組 start -->
+        <div class="row">
+          <div class="col-12 col-md-6 order-md-2">
+            <img class="w-100" src="public/images/about_image02.jpg" alt="" />
+          </div>
+          <div class="col-12 col-md-6 d-flex align-items-center">
+            手工挑豆的秘訣，誠實與堅持而已。咖啡生豆常混入雜質及瑕疵豆，
+            我們在烘焙之前，一定會以人工手選挑除瑕疵豆，
+            將影響咖啡品質的不良豆挑除。 看得到的新鮮，勝過千言萬語 Believing
+            and pursuing fresh coffee with the great taste.
+            咖啡生豆經烘焙後二～七天味道和香氣會達到頂點。
+            新鮮烘焙的咖啡豆可以說是咖啡好喝的最大關鍵！
+            我們堅持給您最佳賞味期限的咖啡。  
+          </div>
+        </div>
+        <!-- 第二組 end -->
+      </div>
+    </main>
+
+    <!-- footer start -->
+    <footer class="bg-primary py-4 text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">copyright &copy; Cama.2024</div>
+        </div>
+      </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- 跳出彈窗 -->
+    <!-- Modal start-->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <!-- 彈窗內容 -->
+      <!-- border-0 -->
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <!-- w-75 mx-auto 視窗75% 置中 -->
+          <div class="modal-body w-75 mx-auto">
+            <h5 class="modal-title text-center" id="exampleModalLabel">登入</h5>
+            <p class="text-center">立即登入，隨時收到獨家優惠</p>
+
+            <!-- novalidate : 把原本預設的html驗證關掉 -->
+
+            <!-- bootstraps 驗證 -->
+            <!-- class="needs-validation" novalidate   -->
+            <!-- required  驗證欄位必填 =>會對此進行驗證 -->
+            <!-- 錯誤訊息 <div class="invalid-feedback">*此為必填欄位</div> -->
+
+            <form action="" class="needs-validation" novalidate>
+              <!-- 表單 浮動標籤(Floating labels) -->
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="account"
+                  name="account"
+                  placeholder="請輸入電子郵件，例如 : name@example.com"
+                  required
+                />
+                <div class="invalid-feedback">*此為必填欄位</div>
+                <label for="account">帳號</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  name="password"
+                  placeholder="請輸入密碼"
+                  required
+                />
+                <!-- invalid-feedback 要放在input下面 -->
+                <div class="invalid-feedback">*此為必填欄位</div>
+                <label for="password">密碼</label>
+              </div>
+              <div class="d-grid mb-5">
+                <!-- btn-lg 大的按鈕 -->
+                <button type="submit" class="btn btn-primary btn-lg">
+                  登入
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Model end -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script src="public/js/common.js"></script>
+  </body>
+</html>

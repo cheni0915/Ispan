@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            display: grid;
+            gap: 5px;
+            grid-template-columns: repeat(7, 70px);
+            grid-template-rows: repeat(7, 70px);
+            grid-template-areas: 
+                "A1 A1 . . . . A6 "
+                "A1 A1 . . . . A7 "
+                "A20 . . . A22 . A8 "
+                "A19 . . . . . A9 "
+                "A18 . A21 . . . A10 "
+                "A17 . . . . A11 A11 "
+                "A16 A15 A14 A13 A12 A11 A11 " ;
+            .item {
+                background-color: pink;
+                font-size: 20px;
+                font-weight: bold;
+                display: grid;
+                place-content: center;
+               
+            }
+            .item1 {
+                grid-area: A1;
+            }
+            .item7 {
+                grid-area: A7;
+            }
+            .item8 {
+                grid-area: A8;
+            }
+            .item9 {
+                grid-area: A9;
+            }
+            .item10 {
+                grid-area: A10;
+            }
+            .item11 {
+                grid-area: A11;
+            }
+            .item12 {
+                grid-area: A12;
+            }
+            .item13 {
+                grid-area: A13;
+            }
+            .item14 {
+                grid-area: A14;
+            }
+            .item15 {
+                grid-area: A15;
+            }
+            .item16 {
+                grid-area: A16;
+            }
+            .item17 {
+                grid-area: A17;
+            }
+            .item18 {
+                grid-area: A18;
+            }
+            .item19 {
+                grid-area: A19;
+            }
+            .item20 {
+                grid-area: A20;
+            }
+            .item21 {
+                grid-area: A21;
+            }
+            .item22 {
+                grid-area: A22;
+            }
+            .item-none {
+                display: none;
+            }
+        }
+    </style>
+    
+    <title>大富翁棋盤</title>
+</head>
+<body>
+    <div class="container">
+        <!-- .item.item$@1*36 -->
+        <div class="item item1">1 - 起點</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+        <div class="item item6">6</div>
+        <div class="item item7">7</div>
+        <div class="item item8">8</div>
+        <div class="item item9">9</div>
+        <div class="item item10">10</div>
+        <div class="item item11">11 - 監獄</div>
+        <div class="item item12">12</div>
+        <div class="item item13">13</div>
+        <div class="item item14">14</div>
+        <div class="item item15">15</div>
+        <div class="item item16">16</div>
+        <div class="item item17">17</div>
+        <div class="item item18">18</div>
+        <div class="item item19">19</div>
+        <div class="item item20">20</div>
+        <div class="item item21">21 <br>機會</div>
+        <div class="item item22">22 <br>命運</div>
+        <div class="item item-none"></div>
+        <div class="item item-none"></div>
+        <div class="item item-none"></div>
+        <div class="item item-none"></div>
+        <div class="item item-none"></div>
+        <div class="item item-none"></div>
+        <div class="item item-none"></div>
+        <div class="item item-none"></div>
+        <div class="item item-none"></div>
+        <div class="item item-none"></div>
+        <div class="item item-none"></div>
+        <div class="item item-none"></div>
+        <div class="item item-none"></div>
+        <div class="item item-none"></div>
+    </div>
+</body>
+</html>

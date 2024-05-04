@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cama | 聯絡我們</title>
+
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+
+    <!-- bootstrap-icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- bootstrap-datepicker-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.min.css"
+      integrity="sha512-34s5cpvaNG3BknEWSuOncX28vz97bRI59UnVtEEpFX536A7BtZSJHsDyFoCl8S7Dt2TPzcrCEoHBGeM4SUBDBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="public/css/style.css" />
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <main class="flex-grow-1 flex-shrink-1 mb-5">
+      <!-- navbar start -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+          <!-- logo -->
+          <a class="navbar-brand" href="index.html">Cama</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- 導覽列連結 -->
+          <!-- ms 靠右 -->
+          <!-- 一般預設為手機板 -->
+          <!-- lg(992px)  -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">關於我們</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="product-list.html">產品列表</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="store.html">門市資訊</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="product-online.html">線上商品</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="faq.html">常見問題</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="contact.html"
+                  >聯絡我們</a
+                >
+              </li>
+              <!-- lg螢幕隱藏 手機顯示-->
+              <li class="nav-item d-block d-lg-none">
+                <!-- <a class="nav-link" href="login.html">會員登入</a> -->
+                <!-- javascript:是表示在觸發預設動作時，執行一段JavaScript程式碼，而javascript:; 表示什麼都不執行，這樣點擊時就沒有任何反應。  -->
+                <a
+                  class="nav-link"
+                  href="javascript:;"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                  >會員登入</a
+                >
+              </li>
+              <li class="nav-item d-block d-lg-none">
+                <a class="nav-link" href="cart.html">購物車</a>
+              </li>
+            </ul>
+
+            <!-- fs-3 字型放大 -->
+            <!-- me-3 右邊界 -->
+            <!-- 手機板為 flex-column -->
+
+            <div class="d-flex flex-column flex-lg-row">
+              <!-- 小人 icon -->
+              <!-- display:none 隱藏-->
+              <!-- d-none 為手機螢幕的情況 -->
+              <a
+                href="javascript:;"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                class="d-none d-lg-block me-3 link-dark"
+              >
+                <i class="bi bi-person-fill fs-3"></i>
+              </a>
+
+              <!-- 購物車icon -->
+              <!-- position top只有0.50.100可調，需要自訂義微調 -->
+
+              <a
+                href=""
+                class="d-none d-lg-block me-3 link-dark position-relative"
+              >
+                <i class="bi bi-cart-fill fs-3"></i>
+                <span
+                  class="position-absolute top-0 start-100 cart-top translate-middle badge rounded-pill bg-danger"
+                  >5 <span class="visually-hidden">unread messages</span></span
+                >
+              </a>
+              <!-- FB icon -->
+              <a href="" class="me-3">
+                <i class="bi bi-facebook link-facebook fs-3"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- navbar end -->
+
+      <!-- 麵包屑 start -->
+      <!-- 元件 麵包屑 (Breadcrumb) -->
+      <div class="bg-light mb-5 pt-3 pb-1 px-3">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+            <li class="breadcrumb-item active" aria-current="page">聯絡我們</li>
+          </ol>
+        </nav>
+      </div>
+      <!-- 麵包屑 end -->
+
+      <div class="container container-small">
+        <div class="row">
+          <h1 class="col-12 text-center mb-4">聯絡我們</h1>
+        </div>
+        <form action="contactForm" class="needs-validation" novalidate>
+          <!-- 聯絡目的 start -->
+          <div class="row mb-3">
+            <label class="col-12 col-md-3 col-form-label" for="type"
+              >聯絡目的
+            </label>
+            <div class="col-12 col-md-9">
+              <select
+                class="form-select"
+                id="type"
+                name="type"
+                aria-label="請選擇聯絡目的"
+                required
+              >
+                <option selected disabled value="">請選擇聯絡目的</option>
+                <!-- 刪除 value 值，option會把 內容傳到資料庫 -->
+                <option value="">課服專區</option>
+                <option value="">加盟專區</option>
+                <option value="">海外代理</option>
+              </select>
+              <div class="invalid-feedback">*此為必填欄位</div>
+            </div>
+          </div>
+          <!-- 聯絡我們 end -->
+
+          <!-- 姓名 start -->
+          <!-- 已先設定 col，要用 col-form-label -->
+          <div class="row mb-3">
+            <label class="col-12 col-md-3 col-form-label" for="username"
+              >姓名
+            </label>
+            <!-- input欄位要用div來控制rwd縮放 -->
+            <div class="col-12 col-md-9">
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                name="username"
+                required
+              />
+              <div class="invalid-feedback">*此為必填欄位</div>
+            </div>
+          </div>
+          <!-- 姓名 end -->
+
+          <!-- 連絡電話 start -->
+          <div class="row mb-3">
+            <label class="col-12 col-md-3 col-form-label" for="phone"
+              >連絡電話
+            </label>
+            <div class="col-12 col-md-9">
+              <input
+                type="text"
+                class="form-control"
+                id="phone"
+                name="phone"
+                required
+              />
+              <div class="invalid-feedback">*此為必填欄位</div>
+            </div>
+          </div>
+          <!-- 連絡電話 end -->
+
+          <!-- Email start -->
+          <div class="row mb-3">
+            <label class="col-12 col-md-3 col-form-label" for="email"
+              >Email
+            </label>
+            <div class="col-12 col-md-9">
+              <input
+                type="text"
+                class="form-control"
+                id="email"
+                name="email"
+                required
+              />
+              <div class="invalid-feedback">*此為必填欄位</div>
+            </div>
+          </div>
+          <!-- Email end -->
+
+          <!-- 聯絡門市 start -->
+          <div class="row mb-3">
+            <label class="col-12 col-md-3 col-form-label" for="type"
+              >選擇門市
+            </label>
+            <div class="col-12 col-md-9">
+              <!-- aria-label : 是一個 HTML attribute，用來告訴讀屏軟件某個元素是什麼。 -->
+              <select
+                class="form-select"
+                id="type"
+                name="type"
+                aria-label="請選擇門市"
+                required
+              >
+                <option selected disabled value="">請選擇門市</option>
+                <!-- 刪除 value 值，option會把 內容傳到資料庫 -->
+                <option value="">台北開封店</option>
+                <option value="">台北虎林店</option>
+                <option value="">北投公館店</option>
+                <option value="">中山南西店</option>
+                <option value="">大橋延三店</option>
+                <option value="">北投中和店</option>
+                <option value="">台北古亭店</option>
+              </select>
+              <div class="invalid-feedback">*此為必填欄位</div>
+            </div>
+          </div>
+          <!-- 聯絡門市 end -->
+
+          <!-- 消費時間 start -->
+          <div class="row mb-3">
+            <label class="col-12 col-md-3 col-form-label" for="date"
+              >消費時間
+            </label>
+            <div class="col-12 col-md-9">
+              <input
+                type="text"
+                class="form-control datepicker"
+                id="date"
+                name="date"
+                autocomplete="off"
+                required
+              />
+              <div class="invalid-feedback">*此為必填欄位</div>
+            </div>
+          </div>
+          <!-- 消費時間 end -->
+
+          <!-- 主旨 start -->
+          <div class="row mb-3">
+            <label class="col-12 col-md-3 col-form-label" for="purpose"
+              >主旨
+            </label>
+            <div class="col-12 col-md-9">
+              <input
+                type="text"
+                class="form-control"
+                id="purpose"
+                name="purpose"
+                required
+              />
+              <div class="invalid-feedback">*此為必填欄位</div>
+            </div>
+          </div>
+          <!-- 主旨 end -->
+
+          <!-- 內容 start -->
+          <div class="row mb-3">
+            <label class="col-12 col-md-3 col-form-label" for="comment"
+              >內容
+            </label>
+            <div class="col-12 col-md-9">
+              <textarea
+                class="form-control"
+                name="comment"
+                id="comment"
+                cols="30"
+                rows="10"
+                required
+              ></textarea>
+              <div class="invalid-feedback">*此為必填欄位</div>
+            </div>
+          </div>
+          <!-- 內容 end -->
+
+          <!-- captcha start -->
+          <div class="row mb-3">
+            <label class="col-12 col-md-3 col-form-label" for="captcha"
+              >驗證碼
+            </label>
+            <div class="col-12 col-md-9">
+              <input
+                type="text"
+                class="form-control"
+                id="captcha"
+                name="captcha"
+                required
+              />
+              <div class="invalid-feedback">*此為必填欄位</div>
+            </div>
+          </div>
+          <!-- captcha end -->
+
+          <!-- 按鈕 -->
+          <div class="col-12 text-center">
+            <input type="submit" class="btn btn-primary" value="送出表單" />
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- footer start -->
+    <footer class="bg-primary py-4 text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">copyright &copy; Cama.2024</div>
+        </div>
+      </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- 跳出彈窗 -->
+    <!-- Modal start-->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <!-- 彈窗內容 -->
+      <!-- border-0 -->
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <!-- w-75 mx-auto 視窗75% 置中 -->
+          <div class="modal-body w-75 mx-auto">
+            <h5 class="modal-title text-center" id="exampleModalLabel">登入</h5>
+            <p class="text-center">立即登入，隨時收到獨家優惠</p>
+
+            <!-- novalidate : 把原本預設的html驗證關掉 -->
+
+            <!-- bootstraps 驗證 -->
+            <!-- class="needs-validation" novalidate   -->
+            <!-- required  驗證欄位必填 =>會對此進行驗證 -->
+            <!-- 錯誤訊息 <div class="invalid-feedback">*此為必填欄位</div> -->
+
+            <form action="" class="needs-validation" novalidate>
+              <!-- 表單 浮動標籤(Floating labels) -->
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="account"
+                  name="account"
+                  placeholder="請輸入電子郵件，例如 : name@example.com"
+                  required
+                />
+                <div class="invalid-feedback">*此為必填欄位</div>
+                <label for="account">帳號</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  name="password"
+                  placeholder="請輸入密碼"
+                  required
+                />
+                <!-- invalid-feedback 要放在input下面 -->
+                <div class="invalid-feedback">*此為必填欄位</div>
+                <label for="password">密碼</label>
+              </div>
+              <div class="d-grid mb-5">
+                <!-- btn-lg 大的按鈕 -->
+                <button type="submit" class="btn btn-primary btn-lg">
+                  登入
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Model end -->
+
+    <!-- bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- datepicker有使用jQuery部分，需先掛載 -->
+    <!-- jQuery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- bootstrap-datepicker -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js"
+      integrity="sha512-LsnSViqQyaXpD4mBBdRYeP6sRwJiJveh2ZIbW41EBrNmKxgr/LFZIiWT6yr+nycvhvauz8c2nYMhrP80YhG7Cw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- bootstrap-datepicker.zh-TW  語系設定  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/locales/bootstrap-datepicker.zh-TW.min.js"
+      integrity="sha512-JBbOVs1ZLxMgoJ+CLhRotpVngRlsCxS6XsB9hddlH9T0w2NQD9bKWwKAWiVaMj/i5x5XNCbHNB7DO70xs5ol/w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="public/js/common.js"></script>
+    <script src="public/js/contact.js"></script>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>九九乘法表</title>
+    <style>
+      * {
+        width: 800px;
+        margin: auto;
+        padding: 0;
+      }
+      h3 {
+        margin: 10px 0px;
+        text-align: center;
+      }
+      table {
+        border: 2px solid rgb(58, 142, 220);
+        border-collapse: collapse;
+        color: red;
+        text-align: left;
+        background-color: rgb(119, 255, 255);
+      }
+
+      th,
+      td {
+        border: 2px solid rgb(58, 142, 220);
+        padding: 5px;
+        font-weight: 500;
+      }
+      th {
+        font-size: 14px;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // document.write(): 會按順序放入html中
+
+
+      // 九九乘法表
+      // 製作表格
+      document.write("<h3>九九乘法表</h3>");
+      document.write("<table>");
+      document.write("<tr>");
+      // 需要列數(th標題欄位): 製作2~9的99乘法表，i從2數到9
+      for (i = 2; i < 10; i++) {
+        document.write("<th>");
+        document.write(i + "的乘法表" + "<br>");
+        document.write("</th>");
+      }
+      document.write("</tr>");
+
+      // 表格內容
+      for (let i = 2; i < 10; i++) {
+        // 製作td欄位
+        document.write("<td>");
+        for (let j = 1; j < 10; j++) {
+          // 寫入欄位內容
+          document.write(`${i}*${j}=${i * j}<br>`);
+        }
+        document.write("</td>");
+      }
+      document.write("</table>");
+
+      
+
+
+
+
+
+      // 改用innerHTML寫入
+      // <div id="table-container"></div> 
+
+      //   let table = "<table><tr>";
+      //   for (let i = 2; i < 10; i++) {
+      //     table += "<td>"
+      //     for (let j = 1; j < 10; j++) {
+      //       table += `${i}*${j}=` +  `${i*j}` + "<br>";
+      //     }
+      //   }
+      //   table += "<tr/></table>";
+      //   document.getElementById("table-container").innerHTML = table;
+
+
+
+
+
+
+      
+
+
+
+      // 參考程式碼: https://yangmooo.pixnet.net/blog/post/26415335-%E3%80%90javascript%E3%80%91%E4%B9%9D%E4%B9%9D%E4%B9%98%E6%B3%95%E8%A1%A8
+      // 參考程式碼: https://juejin.cn/s/javascript%E4%B9%9D%E4%B9%9D%E4%B9%98%E6%B3%95%E8%A1%A8innerHTML%E6%96%B9%E6%B3%95
+      
+      // document.write("<table><tr><td>PID</td><td>PName</td></tr></table>");
+      // for (let i = 2; i < 10; i++) {
+      //     for (let j = 1; j < 10; j++) {
+      //         // console.log(`i = ${i}, j=${j}`);
+      //         console.log(`${i}*${j}=${i*j}`);
+      //         // document.write(`${i}*${j}=${i * j}<br>`);
+      //         document.write("<table><tr><td>" +`${i}*${j}=${i*j}`+ "</td></tr></table>");
+      //     }
+      // }
+      
+      
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cama | 門市資訊</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="public/css/style.css" />
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <main class="flex-grow-1 flex-shrink-1 mb-5">
+      <!-- navbar start -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+          <!-- logo -->
+          <a class="navbar-brand" href="index.html">Cama</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- 導覽列連結 -->
+          <!-- ms 靠右 -->
+          <!-- 一般預設為手機板 -->
+          <!-- lg(992px)  -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">關於我們</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="product-list.html">產品列表</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="store.html">門市資訊</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="product-online.html">線上商品</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="faq.html">常見問題</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="contact.html"
+                  >聯絡我們</a
+                >
+              </li>
+              <!-- lg螢幕隱藏 手機顯示-->
+              <li class="nav-item d-block d-lg-none">
+                <!-- <a class="nav-link" href="login.html">會員登入</a> -->
+                <!-- javascript:是表示在觸發預設動作時，執行一段JavaScript程式碼，而javascript:; 表示什麼都不執行，這樣點擊時就沒有任何反應。  -->
+                <a
+                  class="nav-link"
+                  href="javascript:;"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                  >會員登入</a
+                >
+              </li>
+              <li class="nav-item d-block d-lg-none">
+                <a class="nav-link" href="cart.html">購物車</a>
+              </li>
+            </ul>
+
+            <!-- fs-3 字型放大 -->
+            <!-- me-3 右邊界 -->
+            <!-- 手機板為 flex-column -->
+
+            <div class="d-flex flex-column flex-lg-row">
+              <!-- 小人 icon -->
+              <!-- display:none 隱藏-->
+              <!-- d-none 為手機螢幕的情況 -->
+              <a
+                href="javascript:;"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                class="d-none d-lg-block me-3 link-dark"
+              >
+                <i class="bi bi-person-fill fs-3"></i>
+              </a>
+
+              <!-- 購物車icon -->
+              <!-- position top只有0.50.100可調，需要自訂義微調 -->
+
+              <a
+                href=""
+                class="d-none d-lg-block me-3 link-dark position-relative"
+              >
+                <i class="bi bi-cart-fill fs-3"></i>
+                <span
+                  class="position-absolute top-0 start-100 cart-top translate-middle badge rounded-pill bg-danger"
+                  >5 <span class="visually-hidden">unread messages</span></span
+                >
+              </a>
+              <!-- FB icon -->
+              <a href="" class="me-3">
+                <i class="bi bi-facebook link-facebook fs-3"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- navbar end -->
+
+      <!-- 麵包屑 start -->
+      <!-- 元件 麵包屑 (Breadcrumb) -->
+      <div class="bg-light mb-5 pt-3 pb-1 px-3">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+            <li class="breadcrumb-item active" aria-current="page">門市資訊</li>
+          </ol>
+        </nav>
+      </div>
+      <!-- 麵包屑 end -->
+
+      <div class="container container-small">
+        <div class="row">
+          <h1 class="col-12 mb-4 text-center">門市資訊</h1>
+          <!-- 導覽與頁籤 (Navs & tabs) 膠囊狀 -->
+          <div class="col-12">
+            <ul class="nav nav-pills justify-content-center mb-5">
+              <li class="nav-item me-2">
+                <a
+                  class="nav-link rounded-pill active"
+                  aria-current="page"
+                  href="#"
+                  >北</a
+                >
+              </li>
+              <li class="nav-item me-2">
+                <a class="nav-link rounded-pill border border-primary" href="#"
+                  >中</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link rounded-pill border border-primary" href="#"
+                  >南</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-12">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">門市名稱</th>
+                  <th scope="col">電話</th>
+                  <th scope="col">地址</th>
+                  <th scope="col">導航</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">台北開封店</th>
+                  <td>02-2388-6060</td>
+                  <td>台北市中正區開封街一段11號</td>
+                  <td>
+                    <!-- link-dark => 連結變黑色 -->
+                    <!-- fs => font-size -->
+                    <a class="link-dark" href=""
+                      ><i class="bi bi-geo-alt-fill fs-3"></i
+                    ></a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">台北 虎林店</th>
+                  <td>02-27235566</td>
+                  <td>台北市信義區虎林街133號</td>
+                  <td>
+                    <!-- link-dark => 連結變黑色 -->
+                    <!-- fs => font-size -->
+                    <a class="link-dark" href=""
+                      ><i class="bi bi-geo-alt-fill fs-3"></i
+                    ></a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">北投公館店（暫停營業，移址中）</th>
+                  <td>02-2892-0707</td>
+                  <td>台北市北投區公館路9號</td>
+                  <td>
+                    <!-- link-dark => 連結變黑色 -->
+                    <!-- fs => font-size -->
+                    <a class="link-dark" href=""
+                      ><i class="bi bi-geo-alt-fill fs-3"></i
+                    ></a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">中山南西店</th>
+                  <td>02-2571-8181</td>
+                  <td>台北市中山區中山北路一段140巷13號1樓</td>
+                  <td>
+                    <!-- link-dark => 連結變黑色 -->
+                    <!-- fs => font-size -->
+                    <a class="link-dark" href=""
+                      ><i class="bi bi-geo-alt-fill fs-3"></i
+                    ></a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">大橋延三店</th>
+                  <td>02-2595-7500</td>
+                  <td>台北市大同區延平北路三段22之4號</td>
+                  <td>
+                    <!-- link-dark => 連結變黑色 -->
+                    <!-- fs => font-size -->
+                    <a class="link-dark" href=""
+                      ><i class="bi bi-geo-alt-fill fs-3"></i
+                    ></a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">北投中和店</th>
+                  <td>02-2897-8989</td>
+                  <td>台北市北投區中和街232號</td>
+                  <td>
+                    <!-- link-dark => 連結變黑色 -->
+                    <!-- fs => font-size -->
+                    <a class="link-dark" href=""
+                      ><i class="bi bi-geo-alt-fill fs-3"></i
+                    ></a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">台北古亭店</th>
+                  <td>02-2391-5151</td>
+                  <td>台北市大安區羅斯福路二段51號1樓</td>
+                  <td>
+                    <!-- link-dark => 連結變黑色 -->
+                    <!-- fs => font-size -->
+                    <a class="link-dark" href=""
+                      ><i class="bi bi-geo-alt-fill fs-3"></i
+                    ></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- footer start -->
+    <footer class="bg-primary py-4 text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">copyright &copy; Cama.2024</div>
+        </div>
+      </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- 跳出彈窗 -->
+    <!-- Modal start-->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <!-- 彈窗內容 -->
+      <!-- border-0 -->
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <!-- w-75 mx-auto 視窗75% 置中 -->
+          <div class="modal-body w-75 mx-auto">
+            <h5 class="modal-title text-center" id="exampleModalLabel">登入</h5>
+            <p class="text-center">立即登入，隨時收到獨家優惠</p>
+
+            <!-- novalidate : 把原本預設的html驗證關掉 -->
+
+            <!-- bootstraps 驗證 -->
+            <!-- class="needs-validation" novalidate   -->
+            <!-- required  驗證欄位必填 =>會對此進行驗證 -->
+            <!-- 錯誤訊息 <div class="invalid-feedback">*此為必填欄位</div> -->
+
+            <form action="" class="needs-validation" novalidate>
+              <!-- 表單 浮動標籤(Floating labels) -->
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="account"
+                  name="account"
+                  placeholder="請輸入電子郵件，例如 : name@example.com"
+                  required
+                />
+                <div class="invalid-feedback">*此為必填欄位</div>
+                <label for="account">帳號</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  name="password"
+                  placeholder="請輸入密碼"
+                  required
+                />
+                <!-- invalid-feedback 要放在input下面 -->
+                <div class="invalid-feedback">*此為必填欄位</div>
+                <label for="password">密碼</label>
+              </div>
+              <div class="d-grid mb-5">
+                <!-- btn-lg 大的按鈕 -->
+                <button type="submit" class="btn btn-primary btn-lg">
+                  登入
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Model end -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script src="public/js/common.js"></script>
+  </body>
+</html>

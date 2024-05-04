@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>登入表單</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="public/css/style.css">
+  </head>
+  <body>
+    <div class="container container-small">
+      <div class="row">
+        <h1 class="col-12">登入</h1>
+        <div class="col-12 col-md-6">
+          快速登入 <br />
+          購物累積點數
+        </div>
+        <div class="col-12 col-md-6">
+          <p>
+            登入會員快速結帳 <br />
+            查看訂單 / 修改個人帳戶及更多功能
+          </p>
+          <!-- novalidate : 把原本預設的html驗證關掉 -->
+
+
+          <!-- bootstraps 驗證 -->
+          <!-- class="needs-validation" novalidate   -->
+          <!-- required  驗證欄位必填選項 -->
+          <!-- <div class="invalid-feedback">*此為必填欄位</div> -->
+
+          <form id="loginForm" action="" class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="account" class="form-label">帳號</label>
+              <input
+                type="text"
+                class="form-control"
+                id="account"
+                name="account"
+                placeholder="請輸入電子郵件"
+                required
+              />
+              <div class="invalid-feedback">*此為必填欄位</div>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">密碼</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                placeholder="請輸入密碼"
+                required
+              />
+              <div class="invalid-feedback">*此為必填欄位</div>
+            </div>
+            <div class="text-end">
+              <input class="btn btn-primary" type="submit" value="登入" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Bootstrap 驗證
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function () {
+        "use strict";
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll(".needs-validation");
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms).forEach(function (form) {
+          form.addEventListener(
+            "submit",
+            function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
+  </body>
+</html>

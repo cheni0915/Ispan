@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cama | 線上商品</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="public/css/style.css" />
+  </head>
+  <link rel="stylesheet" href="" />
+  <body class="d-flex flex-column min-vh-100">
+    <main class="flex-grow-1 flex-shrink-1 mb-5">
+      <!-- navbar start -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+          <!-- logo -->
+          <a class="navbar-brand" href="index.html">Cama</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- 導覽列連結 -->
+          <!-- ms 靠右 -->
+          <!-- 一般預設為手機板 -->
+          <!-- lg(992px)  -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">關於我們</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="product-list.html">產品列表</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="store.html">門市資訊</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="product-online.html">線上商品</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="faq.html">常見問題</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="contact.html"
+                  >聯絡我們</a
+                >
+              </li>
+              <!-- lg螢幕隱藏 手機顯示-->
+              <li class="nav-item d-block d-lg-none">
+                <!-- <a class="nav-link" href="login.html">會員登入</a> -->
+                <!-- javascript:是表示在觸發預設動作時，執行一段JavaScript程式碼，而javascript:; 表示什麼都不執行，這樣點擊時就沒有任何反應。  -->
+                <a
+                  class="nav-link"
+                  href="javascript:;"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                  >會員登入</a
+                >
+              </li>
+              <li class="nav-item d-block d-lg-none">
+                <a class="nav-link" href="cart.html">購物車</a>
+              </li>
+            </ul>
+
+            <!-- fs-3 字型放大 -->
+            <!-- me-3 右邊界 -->
+            <!-- 手機板為 flex-column -->
+
+            <div class="d-flex flex-column flex-lg-row">
+              <!-- 小人 icon -->
+              <!-- display:none 隱藏-->
+              <!-- d-none 為手機螢幕的情況 -->
+              <a
+                href="javascript:;"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                class="d-none d-lg-block me-3 link-dark"
+              >
+                <i class="bi bi-person-fill fs-3"></i>
+              </a>
+
+              <!-- 購物車icon -->
+              <!-- position top只有0.50.100可調，需要自訂義微調 -->
+
+              <a
+                href=""
+                class="d-none d-lg-block me-3 link-dark position-relative"
+              >
+                <i class="bi bi-cart-fill fs-3"></i>
+                <span
+                  class="position-absolute top-0 start-100 cart-top translate-middle badge rounded-pill bg-danger"
+                  >5 <span class="visually-hidden">unread messages</span></span
+                >
+              </a>
+              <!-- FB icon -->
+              <a href="" class="me-3">
+                <i class="bi bi-facebook link-facebook fs-3"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- navbar end -->
+
+      <!-- 麵包屑 start -->
+      <!-- 元件 麵包屑 (Breadcrumb) -->
+      <div class="bg-light mb-5 pt-3 pb-1 px-3">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+            <li class="breadcrumb-item active" aria-current="page">線上商品</li>
+          </ol>
+        </nav>
+      </div>
+      <!-- 麵包屑 end -->
+
+      <!-- 側邊欄應用 -->
+      <!-- 列表群組 (List group) -->
+      <!-- .container>.row>.col-12.col-md-4{左}+.col-12.col-md-8{右} -->
+      <div class="container">
+        <div class="row">
+          <!-- 左半邊圖片 -->
+          <div class="col-12 col-md-4">
+            <div class="mb-5 text-center">
+              <img
+                id="mainPic"
+                class="w-100"
+                src="public/images/product_online01.jpg"
+                alt=""
+              />
+            </div>
+            <div class="d-flex justify-content-center">
+              <figure class="active">
+                <img
+                  class="w-100"
+                  src="public/images/product_online01.jpg"
+                  alt=""
+                />
+              </figure>
+              <figure class="mx-3">
+                <img
+                  class="w-100"
+                  src="public/images/product_online02.jpg"
+                  alt=""
+                />
+              </figure>
+              <figure>
+                <img
+                  class="w-100"
+                  src="public/images/product_online03.jpg"
+                  alt=""
+                />
+              </figure>
+              <figure>
+                <img
+                  class="w-100"
+                  src="public/images/product_online04.jpg"
+                  alt=""
+                />
+              </figure>
+              <figure>
+                <img
+                  class="w-100"
+                  src="public/images/product_online05.jpg"
+                  alt=""
+                />
+              </figure>
+            </div>
+            <div class="d-flex justify-content-around">
+              <div>
+                <span>分享 :</span>
+                <i class="bi bi-messenger"></i>
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-pinterest"></i>
+                <i class="bi bi-twitter"></i>
+              </div>
+              <div>
+                <i class="bi bi-heart"></i>
+                <span>喜歡(1181)</span>
+              </div>
+            </div>
+          </div>
+          <!-- 右半邊 -->
+          <div class="col-12 col-md-8">
+            <div class="col-12 mb-3">
+              <img src="public/images/online-logo.svg" alt="" />
+              <span
+                >cama cafe 尋豆師精選咖啡豆 中淺焙花香/中焙堅果/深焙焦糖 454g/包
+                一磅 現貨 蝦皮直送</span
+              >
+            </div>
+            <div class="col-12">
+              <div class="col-12 d-flex justify-content-between">
+                <div>
+                  <span class="text-decoration-underline">4.9</span>
+                  <i class="bi bi-star-fill link-star"></i>
+                  <i class="bi bi-star-fill link-star"></i>
+                  <i class="bi bi-star-fill link-star"></i>
+                  <i class="bi bi-star-fill link-star"></i>
+                  <i class="bi bi-star-fill link-star"></i>
+                  <span> | </span>
+                  <span class="text-decoration-underline">3659評價</span>
+                  <span> | </span>
+                  <span class="text-decoration-underline">1.3萬已售出 </span>
+                </div>
+                <div>
+                  <span>匿名檢舉商品</span>
+                </div>
+              </div>
+              <div class="col-12 bg-danger bg-opacity-10 p-3 my-4">
+                <div>
+                  <del>$699 </del>
+                  <span class="fs-4 text-danger">$489 </span>
+                  <span class="bg-danger text-white"> 7折</span>
+                </div>
+                <div>
+                  <span>現時<i class="bi bi-lightning-fill"></i>特賣</span>
+                  <span>開始於 1/22 00:00 ></span>
+                </div>
+              </div>
+              <div class="col-12 d-flex">
+                <div class="col-12 col-md-2">
+                  <div class="mb-5">
+                    <span>賣場優惠券</span>
+                  </div>
+                  <div class="mb-5">
+                    <span>加價購</span>
+                  </div>
+                  <div class="mb-5">
+                    <span>運送</span>
+                  </div>
+                  <div class="mb-5 margin-top95px">
+                    <span>尋豆師精選咖啡豆</span>
+                  </div>
+                  <div class="mb-5">
+                    <span>數量</span>
+                  </div>
+                </div>
+                <div class="col-12 col-md-10">
+                  <div class="mb-5">
+                    <span class="bg-warning px-2 py-1">現折$20元</span>
+                    <span class="bg-warning px-2 py-1">現折$40元</span>
+                    <span class="bg-warning px-2 py-1">現折$50元</span>
+                    <span class="bg-warning px-2 py-1">8% 蝦幣回饋</span>
+                    <span class="bg-warning px-2 py-1">現折$110元</span>
+                    <span>顯示全部</span>
+                    <i class="bi bi-check-circle-fill"></i>
+                  </div>
+                  <div class="mb-5">
+                    <span class="bg-primary bg-opacity-10">加價購</span>
+                  </div>
+                  <div class="mb-5">
+                    <div>
+                      <img src="public/images/online-shop-icon01.svg" alt="">
+                      <span>蝦皮直送</span>
+                      <i class="bi bi-question-circle"></i> 
+                    </div>
+                    <div>
+                      <img class="online-shop-icon02" src="public/images/online-shop-icon02.png" alt="">
+                      <span>免運費</span>
+                      <p class="text-muted">滿99$，免運費</p>
+                    </div>
+                  </div>
+                  <div class="mb-5 ">
+                    <span class="border border-light p-3">中淺焙花香454g</span>
+                    <span class="border border-light p-3">中焙堅果454g</span>
+                    <span class="border border-light p-3">深焙焦糖454g</span>
+                  </div>
+                  <br>
+                  <div class="mb-5">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary" type="button" id="minusBtn">-</button>
+                      </div>
+                      <input class="small-input text-center"  type="text" id="quantityInput" value="1" readonly>
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="plusBtn">+</button>
+                      </div>
+                      <span> &nbsp;&nbsp;&nbsp;還剩91件</span>
+                    </div>
+                  </div>
+                  <div class="col-12 d-flex">
+                    <div class="text-center px-4 py-2 btn margin-right20px link-cart border-primary">
+                      <i class="bi bi-cart-plus"></i>
+                      <span>加入購物車</span>
+                    </div>
+                    <div class="text-center px-5 py-2 btn btn-primary border-primary">
+                      <span>直接購買</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 連結和圖片是行內元素，未設定寬度的情況下本身會連在一起 -->
+      <!-- .container>.row>h1.col-12{產品列表}+.col-12.col-md-6.col-xl-3.mb-4*20>a>img^a.link-dark[h
+        ref="#"]{產品$} -->
+    </main>
+
+    <!-- footer start -->
+    <footer class="bg-primary py-4 text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">copyright &copy; Cama.2024</div>
+        </div>
+      </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- 跳出彈窗 -->
+    <!-- Modal start-->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <!-- 彈窗內容 -->
+      <!-- border-0 -->
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <!-- w-75 mx-auto 視窗75% 置中 -->
+          <div class="modal-body w-75 mx-auto">
+            <h5 class="modal-title text-center" id="exampleModalLabel">登入</h5>
+            <p class="text-center">立即登入，隨時收到獨家優惠</p>
+
+            <!-- novalidate : 把原本預設的html驗證關掉 -->
+
+            <!-- bootstraps 驗證 -->
+            <!-- class="needs-validation" novalidate   -->
+            <!-- required  驗證欄位必填 =>會對此進行驗證 -->
+            <!-- 錯誤訊息 <div class="invalid-feedback">*此為必填欄位</div> -->
+
+            <form action="" class="needs-validation" novalidate>
+              <!-- 表單 浮動標籤(Floating labels) -->
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="account"
+                  name="account"
+                  placeholder="請輸入電子郵件，例如 : name@example.com"
+                  required
+                />
+                <div class="invalid-feedback">*此為必填欄位</div>
+                <label for="account">帳號</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  name="password"
+                  placeholder="請輸入密碼"
+                  required
+                />
+                <!-- invalid-feedback 要放在input下面 -->
+                <div class="invalid-feedback">*此為必填欄位</div>
+                <label for="password">密碼</label>
+              </div>
+              <div class="d-grid mb-5">
+                <!-- btn-lg 大的按鈕 -->
+                <button type="submit" class="btn btn-primary btn-lg">
+                  登入
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Model end -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="public/js/common.js"></script>
+    <script src="public/js/product-online.js"></script>
+  </body>
+</html>

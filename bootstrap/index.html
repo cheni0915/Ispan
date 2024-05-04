@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cama</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="public/css/style.css" />
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <main class="flex-grow-1 flex-shrink-1 mb-5">
+      <!-- container-fluid 幾乎滿版 -->
+      <!-- container w1320 -->
+
+      <!-- navbar start -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+          <!-- logo -->
+          <a class="navbar-brand" href="index.html">Cama</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- 導覽列連結 -->
+          <!-- ms 靠右 -->
+          <!-- 一般預設為手機板 -->
+          <!-- lg(992px)  -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Bootstraps 通用-間距 -->
+            <!-- me-auto 靠左 -->
+            <!-- ms-auto 靠右-->
+            <!-- mx-auto 置中 -->
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">關於我們</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="product-list.html">產品列表</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="store.html">門市資訊</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="product-online.html">線上商品</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="faq.html">常見問題</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">聯絡我們</a>
+              </li>
+              <!-- lg螢幕隱藏 手機顯示-->
+              <li class="nav-item d-block d-lg-none">
+                <!-- <a class="nav-link" href="login.html">會員登入</a> -->
+                <!-- javascript:是表示在觸發預設動作時，執行一段JavaScript程式碼，而javascript:; 表示什麼都不執行，這樣點擊時就沒有任何反應。  -->
+                <a
+                  class="nav-link"
+                  href="javascript:;"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                  >會員登入</a
+                >
+              </li>
+              <li class="nav-item d-block d-lg-none">
+                <a class="nav-link" href="cart.html">購物車</a>
+              </li>
+            </ul>
+
+            <!-- fs-3 字型放大 -->
+            <!-- me-3 右邊界 -->
+            <!-- 手機板為 flex-column -->
+
+            <div class="d-flex flex-column flex-lg-row">
+              <!-- 小人 icon -->
+              <!-- display:none 隱藏-->
+              <!-- d-none 為手機螢幕的情況 -->
+              <a
+                href="javascript:;"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                class="d-none d-lg-block me-3 link-dark"
+              >
+                <i class="bi bi-person-fill fs-3"></i>
+              </a>
+
+              <!-- 購物車icon -->
+              <!-- position top只有0.50.100可調，需要自訂義微調 -->
+
+              <a
+                href=""
+                class="d-none d-lg-block me-3 link-dark position-relative"
+              >
+                <i class="bi bi-cart-fill fs-3"></i>
+                <span
+                  class="position-absolute top-0 start-100 cart-top translate-middle badge rounded-pill bg-danger"
+                  >5 <span class="visually-hidden">unread messages</span></span
+                >
+              </a>
+              <!-- FB icon -->
+              <a href="" class="me-3">
+                <i class="bi bi-facebook link-facebook fs-3"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- navbar end -->
+
+      <!-- carousel start -->
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide mb-3"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="3"
+            aria-label="Slide 4"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <a href="https://www.camacafe.com/NewDetail/260"
+              ><img
+                src="public/images/image01.jpg"
+                class="d-block w-100"
+                alt="..."
+            /></a>
+          </div>
+          <div class="carousel-item">
+            <a href="https://www.camacafe.com/NewDetail/258"
+              ><img
+                src="public/images/image02.jpg"
+                class="d-block w-100"
+                alt="..."
+            /></a>
+          </div>
+          <div class="carousel-item">
+            <a href="https://www.camacafe.com/Branding/6"
+              ><img
+                src="public/images/image03.jpg"
+                class="d-block w-100"
+                alt="..."
+            /></a>
+          </div>
+          <div class="carousel-item">
+            <a href="https://www.camacafe.com/NewDetail/261"
+              ><img
+                src="public/images/image04.jpg"
+                class="d-block w-100"
+                alt="..."
+            /></a>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!-- carousel end -->
+
+      <!-- 新聞區塊 start-->
+      <!-- .container>.row>.col-3*4>{新聞$} -->
+      <div class="bg-texture">
+        <div class="container mb-4">
+          <div class="row">
+            <h1 class="col-12 text-center mt-3">最新消息</h1>
+            <div class="col-12 col-sm-6 col-md-4 d-flex flex-column">
+              <a href="https://www.camacafe.com/NewDetail/261">
+                <img class="w-100" src="public/images/image04.jpg" alt="" />
+              </a>
+              <a href="https://www.camacafe.com/NewDetail/261"
+                >【官網春節出貨時程調整公告】</a
+              >
+              <p class="text-end align-self-end mt-auto">
+                <i class="bi bi-eye"></i>1485
+              </p>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 d-flex flex-column">
+              <a href="https://www.camacafe.com/NewDetail/260">
+                <img class="w-100" src="public/images/image01.jpg" alt="" />
+              </a>
+              <a href="https://www.camacafe.com/NewDetail/260"
+                >《暖咖 cama x INTEGRATE》檔期調查問卷</a
+              >
+              <p class="text-end align-self-end mt-auto">
+                <i class="bi bi-eye"></i>1500
+              </p>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 d-flex flex-column">
+              <a href="https://www.camacafe.com/NewDetail/258">
+                <img class="w-100" src="public/images/image02.jpg" alt="" />
+              </a>
+              <a href="https://www.camacafe.com/NewDetail/258"
+                >【Bean So Lucky 春節禮盒】上市囉!</a
+              >
+              <p class="text-end align-self-end mt-auto">
+                <i class="bi bi-eye"></i>2500
+              </p>
+            </div>
+
+            <div class="col-12 text-center mb-3">
+              <a
+                href="https://www.camacafe.com/New/"
+                class="btn btn-outline-primary"
+                >觀看更多</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 新聞區塊 end-->
+
+      <!-- 影片區塊 start -->
+      <div class="bg-secondary py-4 mb-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-6 mb-3">
+              <!-- <div class="bg-primary">1</div> -->
+              <h2 class="text-white text-center">
+                讓工作與生活是自己喜歡的樣子
+              </h2>
+              <div class="ratio ratio-16x9">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/5Z0ee1jTkp0?si=YeHP-ZNlrLYAR2mP"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+              <!-- <div class="bg-primary">2</div> -->
+              <h2 class="text-white text-center">
+                新鮮現烘．啟動美好咖啡生活
+              </h2>
+              <div class="ratio ratio-16x9">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/s65DgjuVRfg?si=CfduLEVIe-fd9iHO"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 影片區塊 end -->
+
+      <!-- 工具導覽 start-->
+      <!-- .container>.row>.col-2*6>a[href="#"]{連結$} -->
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-3"><img src="public/images/footer_logo.png" alt=""></div>
+          <div class="col-6 col-md-4 text-center">
+            <img class="w-50" src="public/images/index-fast-01.webp" alt="" />
+            <br>  
+            <a
+              class="link-dark"
+              href=""
+              >APP</a
+            >
+          </div>
+          <div class="col-6 col-md-4 text-center">
+            <img class="w-50" src="public/images/index-fast-02.webp" alt="" />
+            <br>
+            <a
+              class="link-dark"
+              href=""
+              >門市資訊</a
+            >
+          </div>
+          <div class="col-6 col-md-4 text-center">
+            <img class="w-50" src="public/images/index-fast-03.webp" alt="" />
+            <br>
+            <a
+              class="link-dark"
+              href=""
+              >交通方式</a
+            >
+          </div>
+          
+        </div>
+      </div>
+
+      <!-- 工具導覽 end-->
+    </main>
+
+    <!-- footer start -->
+    <footer class="bg-primary py-4 text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">copyright &copy; Cama.2024</div>
+        </div>
+      </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- 跳出彈窗 -->
+    <!-- Modal start-->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <!-- 彈窗內容 -->
+      <!-- border-0 -->
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <!-- w-75 mx-auto 視窗75% 置中 -->
+          <div class="modal-body w-75 mx-auto">
+            <h5 class="modal-title text-center" id="exampleModalLabel">登入</h5>
+            <p class="text-center">立即登入，隨時收到獨家優惠</p>
+
+            <!-- novalidate : 把原本預設的html驗證關掉 -->
+
+            <!-- bootstraps 驗證 -->
+            <!-- class="needs-validation" novalidate   -->
+            <!-- required  驗證欄位必填 =>會對此進行驗證 -->
+            <!-- 錯誤訊息 <div class="invalid-feedback">*此為必填欄位</div> -->
+
+            <form action="" class="needs-validation" novalidate>
+              <!-- 表單 浮動標籤(Floating labels) -->
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="account"
+                  name="account"
+                  placeholder="請輸入電子郵件，例如 : name@example.com"
+                  required
+                />
+                <div class="invalid-feedback">*此為必填欄位</div>
+                <label for="account">帳號</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  name="password"
+                  placeholder="請輸入密碼"
+                  required
+                />
+                <!-- invalid-feedback 要放在input下面 -->
+                <div class="invalid-feedback">*此為必填欄位</div>
+                <label for="password">密碼</label>
+              </div>
+              <div class="d-grid mb-5">
+                <!-- btn-lg 大的按鈕 -->
+                <button type="submit" class="btn btn-primary btn-lg">
+                  登入
+                </button>
+              </div>
+            </form>
+
+
+
+
+            <!-- 表單功能測試部分 -->
+            <form class="needs-validation" novalidate>
+              <div class="col-md-4">
+                <label for="validationCustom01" class="form-label">First name</label>
+                <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label for="validationCustom02" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label for="validationCustomUsername" class="form-label">Username</label>
+                <div class="input-group has-validation">
+                  <span class="input-group-text" id="inputGroupPrepend">@</span>
+                  <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                  <div class="invalid-feedback">
+                    Please choose a username.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="validationCustom03" class="form-label">City</label>
+                <input type="text" class="form-control" id="validationCustom03" required>
+                <div class="invalid-feedback">
+                  Please provide a valid city.
+                </div>
+              </div>
+              <div class="col-md-3">
+                <label for="validationCustom04" class="form-label">State</label>
+                <select class="form-select" id="validationCustom04" required>
+                  <option selected disabled value="">Choose...</option>
+                  <option>...</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid state.
+                </div>
+              </div>
+              <div class="col-md-3">
+                <label for="validationCustom05" class="form-label">Zip</label>
+                <input type="text" class="form-control" id="validationCustom05" required>
+                <div class="invalid-feedback">
+                  Please provide a valid zip.
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                  <label class="form-check-label" for="invalidCheck">
+                    Agree to terms and conditions
+                  </label>
+                  <div class="invalid-feedback">
+                    You must agree before submitting.
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary" type="submit">Submit form</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Model end -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script src="public/js/common.js"></script>
+  </body>
+</html>

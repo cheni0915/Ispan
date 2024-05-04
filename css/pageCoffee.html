@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>咖啡成分表</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .picture {
+            /* 讓咖啡杯橫向排列 */
+            display: inline-block;
+            position: relative;
+            width: 300px;
+            height: 200px;
+            /* 外框線 */
+            /* outline 不吃 border-radius */
+            /* outline: 1px solid black; */
+            
+            /* 建立咖啡杯本體 */
+            /* 巢狀寫法 */
+            .cup {
+                /* 
+                .cup .handle 選一個設定z-index
+                position: relative;
+                z-index: 1; 
+                */
+                position: relative;
+                width: 200px;
+                height: 150px;
+                background-color: orange;
+                border-radius: 0 0 30px 30px;
+                margin-left: 30px;
+
+                /* 咖啡種類 */
+                .coffee {
+                    position: absolute;
+                    bottom: 0;
+                    margin-bottom: 10px;
+                    margin-left: 10px;
+                    /* outline: 1px solid; */
+                    background-color: brown;
+                    /* width: 180px */
+                    width: calc(100% - 10px * 2);
+                    height: 40px;
+                    border-radius: 0 0 20px 20px;
+                    text-align: center;
+                    color: white;
+                   
+                }
+            }
+            /* CSS下面的會覆蓋上面的 */
+            .cup2 {
+                /* 奶泡 */
+                .milkfoam {
+                    position: absolute;
+                    bottom: 0;
+                    margin-bottom: 50px;
+                    margin-left: 10px;
+                    /* outline: 1px solid; */
+                    background-color: white;
+                    width: calc(100% - 10px * 2);
+                    height: 40px;
+                    text-align: center;
+                }
+            }
+            .cup3 {
+                /* 水 */
+                .water {
+                    position: absolute;
+                    bottom: 0;
+                    margin-bottom: 50px;
+                    margin-left: 10px;
+                    /* outline: 1px solid; */
+                    background-color: rgb(140, 214, 251);
+                    width: calc(100% - 10px * 2);
+                    height: 80px;
+                    text-align: center;
+                }
+            }
+            .cup4 {
+                /* 牛奶 */
+                .milk {
+                    position: absolute;
+                    bottom: 0;
+                    margin-bottom: 50px;
+                    margin-left: 10px;
+                    /* outline: 1px solid; */
+                    background-color: rgb(186, 185, 185);
+                    width: calc(100% - 10px * 2);
+                    height: 60px;
+                    text-align: center;
+                }
+            }
+            .cup5 {
+                /* 牛奶 */
+                .milk {
+                    position: absolute;
+                    z-index: 5;
+                    bottom: 0;
+                    margin-bottom: 50px;
+                    margin-left: 10px;
+                    /* outline: 1px solid; */
+                    background-color: rgb(186, 185, 185);
+                    width: calc(100% - 10px * 2);
+                    height: 50px;
+                    text-align: center;
+                }
+                /* 奶泡 */
+                .milkfoam {
+                    position: absolute;
+                    z-index: 4;
+                    bottom: 0;
+                    margin-bottom: 50px;
+                    margin-left: 10px;
+                    /* outline: 1px solid; */
+                    background-color: white;
+                    width: calc(100% - 10px * 2);
+                    height: 80px;
+                    text-align: center;
+                }
+            }
+            .cup6 {
+                /* 鮮奶油 */
+                .cream {
+                    position: absolute;
+                    z-index: 7;
+                    bottom: 0;
+                    margin-bottom: 50px;
+                    margin-left: 10px;
+                    /* outline: 1px solid; */
+                    background-color: rgb(241, 218, 43);
+                    width: calc(100% - 10px * 2);
+                    height: 40px;
+                    text-align: center;
+                }
+            }
+            .cup7 {
+                /* 半奶油半奶泡 */
+                .milkbutter {
+                    position: absolute;
+                    z-index: 6;
+                    bottom: 0;
+                    margin-bottom: 50px;
+                    margin-left: 10px;
+                    /* outline: 1px solid; */
+                    background-color: rgb(201, 192, 72);
+                    width: calc(100% - 10px * 2);
+                    height: 40px;
+                    text-align: center;
+                }
+                .milkfoam {
+                    position: absolute;
+                    z-index: 4;
+                    bottom: 0;
+                    margin-bottom: 50px;
+                    margin-left: 10px;
+                    /* outline: 1px solid; */
+                    background-color: white;
+                    width: calc(100% - 10px * 2);
+                    height: 80px;
+                    text-align: center;
+                }
+            }
+            .cup8 {
+                .milk {
+                    position: absolute;
+                    z-index: 5;
+                    bottom: 0;
+                    margin-bottom: 50px;
+                    margin-left: 10px;
+                    /* outline: 1px solid; */
+                    background-color: rgb(186, 185, 185);
+                    width: calc(100% - 10px * 2);
+                    height: 30px;
+                    text-align: center;
+                }
+                .milkfoam {
+                    position: absolute;
+                    z-index: 4;
+                    bottom: 0;
+                    margin-bottom: 50px;
+                    margin-left: 10px;
+                    /* outline: 1px solid; */
+                    background-color: white;
+                    width: calc(100% - 10px * 2);
+                    height: 80px;
+                    text-align: center;
+                }
+            }
+            .cup9 {
+                .chocolate {
+                    position: absolute;
+                    z-index: 9;
+                    bottom: 0;
+                    margin-bottom: 50px;
+                    margin-left: 10px;
+                    /* outline: 1px solid; */
+                    background-color: rgb(111, 35, 18);
+                    color: white;
+                    width: calc(100% - 10px * 2);
+                    height: 20px;
+                    text-align: center;
+                }
+                .milk {
+                    position: absolute;
+                    z-index: 8;
+                    bottom: 0;
+                    margin-bottom: 50px;
+                    margin-left: 10px;
+                    /* outline: 1px solid; */
+                    background-color: rgb(186, 185, 185);
+                    width: calc(100% - 10px * 2);
+                    height: 50px;
+                    text-align: center;
+                }
+                .cream {
+                    position: absolute;
+                    z-index: 7;
+                    bottom: 0;
+                    margin-bottom: 50px;
+                    margin-left: 10px;
+                    /* outline: 1px solid; */
+                    background-color:  rgb(241, 218, 43);
+                    width: calc(100% - 10px * 2);
+                    height: 80px;
+                    text-align: center;
+                }
+            }
+            .cup10 {
+                .milkfoamsugar {
+                    position: absolute;
+                    z-index: 2;
+                    bottom: 0;
+                    margin-bottom: 50px;
+                    margin-left: 10px;
+                    /* outline: 1px solid; */
+                    background-color: pink;
+                    width: calc(100% - 10px * 2);
+                    height: 50px;
+                    text-align: center;
+                }
+                .caramel {
+                    position: absolute;
+                    z-index: 1;
+                    bottom: 0;
+                    margin-bottom: 50px;
+                    margin-left: 10px;
+                    /* outline: 1px solid; */
+                    background-color: rgb(210, 186, 135);
+                    width: calc(100% - 10px * 2);
+                    height: 80px;
+                    text-align: center;
+                }
+            }
+            .cup11 {
+                .whisky {
+                    position: absolute;
+                    z-index: 2;
+                    bottom: 0;
+                    margin-bottom: 50px;
+                    margin-left: 10px;
+                    /* outline: 1px solid; */
+                    background-color: rgb(177, 82, 82);
+                    width: calc(100% - 10px * 2);
+                    height: 30px;
+                    text-align: center;
+                }
+                .cream {
+                    position: absolute;
+                    z-index: 1;
+                    bottom: 0;
+                    margin-bottom: 50px;
+                    margin-left: 10px;
+                    /* outline: 1px solid; */
+                    background-color:  rgb(241, 218, 43);
+                    width: calc(100% - 10px * 2);
+                    height: 60px;
+                    text-align: center;
+                }
+            }
+            .cup12 {
+                .chocolate {
+                    position: absolute;
+                    z-index: 9;
+                    bottom: 0;
+                    margin-bottom: 50px;
+                    margin-left: 10px;
+                    /* outline: 1px solid; */
+                    background-color: rgb(111, 35, 18);
+                    color: white;
+                    width: calc(100% - 10px * 2);
+                    height: 30px;
+                    text-align: center;
+                }
+                .cream {
+                    position: absolute;
+                    z-index: 1;
+                    bottom: 0;
+                    margin-bottom: 50px;
+                    margin-left: 10px;
+                    /* outline: 1px solid; */
+                    background-color:  rgb(241, 218, 43);
+                    width: calc(100% - 10px * 2);
+                    height: 60px;
+                    text-align: center;
+                }
+            }
+            /* 建立把手 */
+            .handle {
+                /* 精準對位 */
+                position: absolute;
+                /* z-index:-1 圖層最下層，要先有position定位 */
+                z-index: -1;
+                top: 0;
+                left: 0;
+                width: 100px;
+                height: 100px;
+                margin-left: 180px;
+                margin-top: 10px;
+                background-color: brown;
+                border-radius: 0 30px 30px 0;
+                .handle2 {
+                    /* 精準對位 */
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    margin-top: 15px;
+                    width: 80px;
+                    height: 70px;
+                    background-color:white;
+                    border-radius: 0 20px 20px 0;
+                    
+                }
+            }
+            /* 平行於cup本體，在pic內 */
+            .plate {
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin-top: 150px;
+                margin-left: 10px;
+                width: 250px;
+                height: 10px;
+                background-color:gray;
+                border-radius: 0 0 100px 100px;
+            }
+            .plate2 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin-top: 160px;
+                margin-left: 30px;
+                width: 200px;
+                height: 10px;
+                background-color: gray;
+                border-radius: 0 0 100px 100px;
+            }
+            .name {
+                /* outline: 1px solid; */
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin-top: 170px;
+                margin-left: 5px;
+                width: 250px;
+                text-align: center;
+                font-size: 24px;
+                font-weight: bolder;
+            }
+        }
+
+
+
+
+        
+        /* 建立咖啡杯本體 */
+        /* 扁平寫法 */
+        /* .cup {
+            width: 200px;
+            height: 150px;
+            background-color: orange;
+        } */
+
+    </style>
+</head>
+<body>
+    <!-- 第一杯 -->
+    <div class="picture">
+        <div class="cup">
+            <div class="coffee">濃縮咖啡</div>
+        </div>
+        <div class="handle">
+            <div class="handle2"></div>
+        </div>
+        <!-- .plate+.plate2 -->
+        <div class="plate"></div>
+        <div class="plate2"></div>
+        <div class="name">濃縮咖啡</div>
+    </div>
+    <!-- 第二杯 -->
+    <div class="picture">
+        <div class="cup cup2">
+            <div class="coffee">濃縮咖啡</div>
+            <div class="milkfoam">奶泡</div>
+        </div>
+        <div class="handle">
+            <div class="handle2"></div>
+        </div>
+        <div class="plate"></div>
+        <div class="plate2"></div>
+        <div class="name">瑪琪雅朵</div>
+    </div>
+    <!-- 第三杯 -->
+    <div class="picture">
+        <div class="cup cup3">
+            <div class="coffee">濃縮咖啡</div>
+            <div class="water">水</div>
+        </div>
+        <div class="handle">
+            <div class="handle2"></div>
+        </div>
+        <div class="plate"></div>
+        <div class="plate2"></div>
+        <div class="name">美式咖啡</div>
+    </div>
+    <!-- 第四杯 -->
+    <div class="picture">
+        <div class="cup cup4">
+            <div class="coffee">濃縮咖啡</div>
+            <div class="milk">牛奶</div>
+        </div>
+        <div class="handle">
+            <div class="handle2"></div>
+        </div>
+        <div class="plate"></div>
+        <div class="plate2"></div>
+        <div class="name">白咖啡</div>
+    </div>
+
+
+
+
+    <!-- 第五杯 -->
+    <div class="picture">
+        <div class="cup cup5">
+            <div class="coffee">濃縮咖啡</div>
+            <div class="milk">牛奶</div>
+            <div class="milkfoam">奶泡</div>
+        </div>
+        <div class="handle">
+            <div class="handle2"></div>
+        </div>
+        <div class="plate"></div>
+        <div class="plate2"></div>
+        <div class="name">拿鐵</div>
+    </div>
+    <!-- 第六杯 -->
+    <div class="picture">
+        <div class="cup cup6">
+            <div class="coffee">濃縮咖啡</div>
+            <div class="cream">鮮奶油</div>
+        </div>
+        <div class="handle">
+            <div class="handle2"></div>
+        </div>
+        <div class="plate"></div>
+        <div class="plate2"></div>
+        <div class="name">美式咖啡</div>
+    </div>
+    <!-- 第七杯 -->
+    <div class="picture">
+        <div class="cup cup7">
+            <div class="coffee">濃縮咖啡</div>
+            <div class="milkbutter">半牛奶半奶油</div>
+            <div class="milkfoam">奶泡</div>
+        </div>
+        <div class="handle">
+            <div class="handle2"></div>
+        </div>
+        <div class="plate"></div>
+        <div class="plate2"></div>
+        <div class="name">布雷衛/半拿鐵</div>
+    </div>
+    <!-- 第八杯 -->
+    <div class="picture">
+        <div class="cup cup8">
+            <div class="coffee">濃縮咖啡</div>
+            <div class="milk">牛奶</div>
+            <div class="milkfoam">奶泡</div>
+        </div>
+        <div class="handle">
+            <div class="handle2"></div>
+        </div>
+        <div class="plate"></div>
+        <div class="plate2"></div>
+        <div class="name">卡布奇諾</div>
+    </div>
+    <!-- 第九杯 -->
+    <div class="picture">
+        <div class="cup cup9">
+            <div class="coffee">濃縮咖啡</div>
+            <div class="chocolate">巧克力糖漿</div>
+            <div class="milk">牛奶</div>
+            <div class="cream">鮮奶油</div>
+        </div>
+        <div class="handle">
+            <div class="handle2"></div>
+        </div>
+        <div class="plate"></div>
+        <div class="plate2"></div>
+        <div class="name">摩卡</div>
+    </div>
+    <!-- 第十杯 -->
+    <div class="picture">
+        <div class="cup cup10">
+            <div class="coffee">濃縮咖啡</div>
+            <div class="milkfoamsugar">奶泡+糖漿</div>
+            <div class="caramel">焦糖</div>
+        </div>
+        <div class="handle">
+            <div class="handle2"></div>
+        </div>
+        <div class="plate"></div>
+        <div class="plate2"></div>
+        <div class="name">焦糖瑪奇朵</div>
+    </div>
+    <!-- 第十一杯 -->
+    <div class="picture">
+        <div class="cup cup11">
+            <div class="coffee">濃縮咖啡</div>
+            <div class="whisky">愛爾蘭威士忌</div>
+            <div class="cream">鮮奶油</div>
+        </div>
+        <div class="handle">
+            <div class="handle2"></div>
+        </div>
+        <div class="plate"></div>
+        <div class="plate2"></div>
+        <div class="name">愛爾蘭咖啡</div>
+    </div>
+    <!-- 第十二杯 -->
+    <div class="picture">
+        <div class="cup cup12">
+            <div class="coffee">濃縮咖啡</div>
+            <div class="chocolate">巧克力糖漿</div>
+            <div class="cream">鮮奶油</div>
+        </div>
+        <div class="handle">
+            <div class="handle2"></div>
+        </div>
+        <div class="plate"></div>
+        <div class="plate2"></div>
+        <div class="name">維也納咖啡</div>
+    </div>
+    
+</body>
+</html>

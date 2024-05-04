@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {     
+            --y:calc( 95svw / 6 ); 
+            --x:calc( 95svh / 6);
+            margin-top: 5px;
+            display: grid;
+            gap: 5px;
+            grid-template-columns: repeat(6, var(--y));
+            grid-template-rows: repeat(6, var(--x));
+            grid-template-areas:
+            " A1 A1 A7 A7 A7 A14 " 
+            " A1 A1 A7 A7 A7 A15 " 
+            " A2 A3 A7 A7 A7 A15 " 
+            " A4 A4 A8 A9 A10 A16 " 
+            " A4 A4 A11 A13 A13 A17 " 
+            " A5 A6 A12 A13 A13 A18 " 
+            ;
+        }
+        img {
+            width: 100%;
+            height: 100%;  
+            object-fit:cover;
+        }
+
+        .item1 {
+            grid-area: A1;
+        }
+        .item2 {
+            grid-area: A2;
+        }
+        .item3 {
+            grid-area: A3;
+        }
+        .item4 {
+            grid-area: A4;
+        }
+        .item5 {
+            grid-area: A5;
+        }
+        .item6 {
+            grid-area: A6;
+        }
+        .item7 {
+            grid-area: A7;
+        }
+        .item8 {
+            grid-area: A8;
+        }
+        .item9 {
+            grid-area: A9;
+        }
+        .item10 {
+            grid-area: A10;
+        }
+        .item11 {
+            grid-area: A11;
+        }
+        .item12 {
+            grid-area: A12;
+        }
+        .item13 {
+            grid-area: A13;
+        }
+        .item14 {
+            grid-area: A14;
+        }
+        .item15 {
+            grid-area: A15;
+        }
+        .item16 {
+            grid-area: A16;
+        }
+        .item17 {
+            grid-area: A17;
+        }
+        .item18 {
+            grid-area: A18;
+        }
+        @media (max-width:768px){
+            .container {     
+                --y:calc(100svw / 2);
+                --x:calc(100svh / 6);
+                grid-template-columns: repeat(2, var(--y));
+                grid-template-rows: repeat(4, var(--x));
+                grid-template-areas:
+                "A1 A1" 
+                "A1 A1" 
+                "A2 A3" 
+                "A4 A4" 
+                "A4 A4" 
+                "A5 A6" 
+                "A7 A7" 
+                "A7 A7" 
+                "A8 A9"
+                "A10 A11"
+                "A12 A14"
+                "A13 A13"
+                "A13 A13"
+                "A15 A16"
+                "A17 A18"
+                ;
+            }
+        }
+
+    </style>
+    <title>Grid 版面配置</title>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1">
+            <img src="./images/image01.jpg" alt="">
+        </div>
+        <div class="item item2">
+            <img src="./images/image02.jpg" alt="">
+        </div>
+        <div class="item item3">
+            <img src="./images/image03.jpg" alt="">
+        </div>
+        <div class="item item4">
+            <img src="./images/image04.jpg" alt="">
+        </div>
+        <div class="item item5">
+            <img src="./images/image05.jpg" alt="">
+        </div>
+        <div class="item item6">
+            <img src="./images/image06.jpg" alt="">
+        </div>
+        <div class="item item7">
+            <img src="./images/image07.jpg" alt="">
+        </div>
+        <div class="item item8">
+            <img src="./images/image08.jpg" alt="">
+        </div>
+        <div class="item item9">
+            <img src="./images/image09.jpg" alt="">
+        </div>
+        <div class="item item10">
+            <img src="./images/image10.jpg" alt="">
+        </div>
+        <div class="item item11">
+            <img src="./images/image11.jpg" alt="">
+        </div>
+        <div class="item item12">
+            <img src="./images/image12.jpg" alt="">
+        </div>
+        <div class="item item13">
+            <img src="./images/image13.jpg" alt="">
+        </div>
+        <div class="item item14">
+            <img src="./images/image14.jpg" alt="">
+        </div>
+        <div class="item item15">
+            <img src="./images/image15.jpg" alt="">
+        </div>
+        <div class="item item16">
+            <img src="./images/image16.jpg" alt="">
+        </div>
+        <div class="item item17">
+            <img src="./images/image17.jpg" alt="">
+        </div>
+        <div class="item item18">
+            <img src="./images/image18.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>

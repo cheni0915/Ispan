@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圖片輪播</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 800px;
+        margin: auto;
+        text-align: center;
+
+    }
+    .imagesDiv{ 
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+    }
+    img {
+        width: 200px;
+        height: 200px;
+    }
+    .btn {
+        margin: 15px 15px;
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    /* 文字處理 */
+    .textDiv {
+        /* outline: 1px solid; */
+        box-sizing: border-box;
+        width: 200px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        list-style-type: none;
+        margin-top: 10px;
+    }
+    .text {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    /* 顯示第幾張圖片 */
+    .active {
+        color: pink;
+    }
+
+</style>
+<body>
+    <section class="gallery">
+        <h2>圖片輪播</h2>
+        <div class="imagesDiv">
+            <a href="https://unsplash.com/"><img src="images/image01.jpg" alt="image01" class="image"></a>
+            <a href="https://unsplash.com/"><img src="images/image02.jpg" alt="image02" class="image"></a>
+            <a href="https://unsplash.com/"><img src="images/image03.jpg" alt="image03" class="image"></a>
+            <a href="https://unsplash.com/"><img src="images/image04.jpg" alt="image04" class="image"></a>
+            <a href="https://unsplash.com/"><img src="images/image05.jpg" alt="image05" class="image"></a>     
+        </div>
+        <ul class="textDiv">
+            <li class="text">1</li>
+            <li class="text">2</li>
+            <li class="text">3</li>
+            <li class="text">4</li>
+            <li class="text">5</li>
+        </ul>
+        <div>
+            <button class="btn upbtn">上一張</button>
+            <button class="btn stopbtn">暫停</button>
+            <button class="btn downbtn">下一張</button>
+        </div>
+        
+    </section>
+    <!-- 輪播過程思考 -->
+    <!-- 
+        1.抓取5張圖片
+        2.預設只有中間1張顯現，2秒自動輪播下一張
+        3.左右按鈕可點擊上一張下一張圖
+        4.中間按鈕取消輪播功能
+        5.單擊圖片可超連結網址
+        6.執行到第幾張圖片
+     -->
+    <script>
+        let images = document.querySelectorAll(".image");            // console.log(image);
+        let imagesLen = images.length;                               // console.log(imageLen);
+        let imagesDiv = document.querySelector(".imagesDiv");       // console.log(imagesDiv);
+        let currentIndex = 0;
+
+
+
+        // 按鈕綁監聽功能
+        document.querySelector(".upbtn").addEventListener("click", upbtnClick);
+        document.querySelector(".downbtn").addEventListener("click",downbtnClick);
+        document.querySelector(".stopbtn").addEventListener("click",stopbtnClick);
+        
+
+        // 顯示圖片function
+        function showImage() {
+            for (let i = 0; i < imagesLen; i++) {
+                let nextIndex = (currentIndex + i) % imagesLen;
+                images[i].src = `images/image0${nextIndex + 1}.jpg`;
+            }
+            // 任何數除以自己，餘數都會是0
+            currentIndex = (currentIndex + 1) % imagesLen;
+            updateIndexText();
+        }
+
+        // 宣告輪播
+        let swiperImages = setInterval(showImage,2000);
+
+
+
+        // 文字改變功能
+        function updateIndexText() {
+            let textElements = document.querySelectorAll(".text");
+
+            for (let i=0; i < textElements.length; i++) {
+                if (i === currentIndex ) {
+                    textElements[i].classList.add("active");
+                } 
+                else {
+                    textElements[i].classList.remove("active");
+                }
+            }
+        }
+
+
+
+
+
+
+        // 按鈕function
+        // 切換頁面功能: 需要傳入timer參數，讓其馬上切換.
+        // 暫停功能: clearInterval()
+
+
+        // 切換頁面功能
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % imagesLen;
+            showImage(currentIndex);
+        }
+
+        // 上一頁
+        function upbtnClick(){
+            nextImage();
+        }
+
+        // 下一頁
+        function downbtnClick(){
+            currentIndex = (currentIndex + 2) % imagesLen;
+            showImage(currentIndex);
+        }
+
+        // 暫停
+        function stopbtnClick(){
+            clearInterval(swiperImages);
+        }
+
+    </script>
+</body>
+</html>

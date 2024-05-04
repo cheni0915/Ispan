@@ -1,0 +1,47 @@
+.bg-texture {
+  background-image: url("../images/bg-texture.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.link-facebook {
+  color: #4267b2;
+}
+
+.cart-top {
+  top: 5px !important;
+}
+
+.container-small {
+  max-width: 900px;
+}
+
+
+/* product-online */
+figure.active{
+  border: 2px solid blue;
+}
+
+.link-star {
+  color: rgb(229, 185, 54);
+}
+
+.margin-top95px {
+  margin-top: 95px;
+}
+
+.small-input {
+  width: 50px;
+}
+
+.online-shop-icon02 {
+  width: 25px;
+}
+
+.margin-right20px {
+  margin-right:20px;
+}
+
+.link-cart {
+  background-color: aliceblue;
+}

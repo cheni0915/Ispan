@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stars</title>
+    <style>
+        * {
+            box-sizing: content-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper {
+            width: 800px;
+            margin: 0 auto;
+        }
+        .imgDiv, .textDiv {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header></header>
+        <main>
+            <div class="imgDiv">
+                <img src="./images/star.gif" alt="stars" id="star01">
+                <img src="./images/star.gif" alt="stars" id="star02">
+                <img src="./images/star.gif" alt="stars" id="star03">
+                <img src="./images/star.gif" alt="stars" id="star04">
+                <img src="./images/star.gif" alt="stars" id="star05">
+            </div>
+            <div class="textDiv"></div>
+        </main>
+    </div>
+
+
+
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script>
+        $(".imgDiv img").mouseover(function(){
+            $(this).attr("src", "./images/chngstar.gif");
+            $(this).prevAll().attr("src", "./images/chngstar.gif");
+            console.log(this);
+            let text = `打分中...${$(".imgDiv img").index($(this))+1}分`;
+            $(".textDiv").html(text);
+        });
+
+        $(".imgDiv img").mouseout(function(){
+            $(".imgDiv img").attr("src", "./images/star.gif");
+            let text = "";
+            $(".textDiv").html(text);
+        });
+
+
+        // $(".imgDiv img").hover(function(){
+        //     $(this).attr("src", "./images/chngstar.gif");
+        // },function(){
+        //     $(this).attr("src", "./images/star.gif");
+        // })
+
+        $(".imgDiv img").click(function(){
+            $(this).prevAll().attr("src", "./images/chngstar.gif");
+            let text = `你給${$(".imgDiv img").index($(this))+1}顆星`;
+            $(".textDiv").html(text);
+        });
+
+        $(".imgDiv img").dblclick(function(){
+            $(".imgDiv img").attr("src", "./images/star.gif");
+            let text = "";
+            $(".textDiv").html(text);
+        });
+
+        $(".imgDiv img").mousedown(function(){
+            $(this).attr("src", "./images/chngstar.gif");
+            
+        })
+
+    </script>
+</body>
+</html>

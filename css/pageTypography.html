@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>字型海報</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
+    <style>
+        .poster {
+            /* relative 可以水平置中 */
+            position: relative;
+            top: 0;
+            left: 0;
+            margin: auto;
+            /*  position: absolute 可以水平垂直置中
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0; 
+            margin: auto;
+            */
+            width: 450px;
+            height: 695px;
+            outline: 1px solid;
+            overflow: hidden;
+            font-family: 'Saira Stencil One', sans-serif;
+        }
+
+
+        img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0.3;
+        }
+
+
+        /* red1區塊 */
+        .red1 {
+            position: absolute;
+            top: 0;
+            margin-top: 145px;
+            width: 423px;
+            height: 85px;
+            background-color: #c20116;
+            rotate: 45deg;
+            transform-origin: left top;
+        }
+        /* 調整 red1內字型 */
+        .text1 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-top: 8px;
+            margin-right: 40px;
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            /* background-color: blue; */
+            rotate: 270deg;
+            transform-origin: right top;
+
+        }
+
+
+        /* red2區塊 */
+        .red2 {
+            position: absolute;
+            top: 0;
+            margin-top: 265px;
+            width: 610px;
+            height: 85px;
+            background-color: #a41224;
+            /* opacity: 0.5; */
+            rotate: 45deg;
+            transform-origin: left top;
+            /* padding未設定border-box，會往外長 */
+            padding: 3px;
+            box-sizing: border-box;
+        }
+        /* 調整red2內字型 */
+        .text2 {
+            /* outline: 1px solid; */
+            width: 160px;
+            text-align: right;
+            color: #fff;
+            line-height: 20px;
+            font-weight: 500;
+
+        }
+
+        /* black區塊 */
+        .black {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-top: 556px;
+            width: 1000px;
+            height: 126px;
+            /* 第四位數是透明度 */
+            background-color: rgba(0, 0, 0, 1);
+            rotate: 315deg;
+            transform-origin: left bottom;
+        }
+        /* 控制black內字型 */
+        .text3 {
+            /* outline: 1px solid white; */
+            width: 580px;
+            text-align: right;
+            color: #fff;
+            font-size: 65px;
+            line-height: 70px;
+            font-weight: bold;
+            padding-right: 30px;
+        }
+        .text4 {
+            margin-top: -15px;
+            font-weight: lighter;
+        }
+
+
+        /* 文字區塊-作者 */
+        .wording {
+            /* outline: 1px solid; */
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            rotate: 315deg;
+            transform-origin: left bottom;
+            width: 560px;
+            text-align: right;
+            margin-left: 60px;
+            margin-bottom: 15px;
+            font-size: 24px;
+            white-space: nowrap;
+        }
+        .name {
+            /* outline: 1px solid; */
+            width: 100px;
+            text-align: left;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            rotate: 315deg;
+            transform-origin: left bottom;
+            margin-left: 400px;
+            margin-bottom: 325px;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+        .name .bold {
+            font-weight: bold;
+        }
+
+        /* letters區塊 */
+        .letters {
+            /* outline: 1px solid; */
+            width: 500px;
+            text-align: right;
+            position: absolute;
+            left: 0;
+            top: 0;
+            rotate: 315deg;
+            transform-origin: left top;
+            margin-top: 420px;
+            font-size: 24px;
+            line-height: 28px;
+        }
+        .letters  .bold {
+            /* background-color: pink; */
+            margin-right: 100px;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        /* barcode區塊 */
+        /* CSS巢狀結構設定時，權限會比較高 */
+        .barcode {
+            /* CSS裡面使用變數 */
+            /* 格式: --變數:值;  */
+            /* --a:10; */
+            --num-1:10;
+            /* outline: 1px solid; */
+            position: absolute;
+            /*  width:100% */
+            width: 90px;
+            height: 200px;
+            /* 消除區塊間格 */
+            font-size: 0;
+            opacity: 0.5;
+
+            /* 移動barcode */
+            rotate: -45deg;
+            transform-origin: top left;
+            margin-top: 506px;
+            margin-left: 240px ;
+
+            .line {
+                /* background-color: aqua; */
+                position: relative;
+                /* outline: 1px solid; */
+                display: inline-block;
+                height: 100%;
+                width: calc(100% / var(--num-1));
+                /* 要把font-size設定還原，不然文字內容無法顯現 */
+                font-size: initial;
+                vertical-align: top;
+                .up {
+                    /* background-color: pink; */
+                    /* 扣除掉 .down 的 20px 後的高度 */
+                    position: relative;
+                    height: calc( 100% - 20px);
+                    .codeblack {
+                        /* 黑線從下方往上延伸 */
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        /* 黑線統一設定 */
+                        background-color: black;
+                        height: 70%;
+                        width: 10%;
+                    }
+                }
+                .dw {
+                    /* background-color: pink; */
+                    height: 20px;
+                    text-align: center;
+                }
+            }
+            .line0 .up .codeblack {
+                height: 75%;
+                width: 30%;
+            }
+            .line1 .up .codeblack {
+                height: 100%;
+                width: 20%;
+            }
+            .line2 .up .codeblack {
+                height: 30%;
+                width: 40%;
+            }
+            .line3 .up .codeblack {
+                height: 80%;
+                width: 20%;
+            }
+            .line4 .up .codeblack {
+                height: 100%;
+                width: 50%;
+            }
+            .line5 .up .codeblack {
+                height: 30%;
+                width: 20%;
+            }
+            .line6 .up .codeblack {
+                height: 80%;
+                width: 20%;
+            }
+            .line7 .up .codeblack {
+                height: 100%;
+                width: 40%;
+            }
+            .line8 .up .codeblack {
+                height: 30%;
+                width: 20%;
+            }
+            .line9 .up .codeblack {
+                height: 100%;
+                width: 20%;
+            }
+            .dw {
+                font-size: 10px;
+                font-weight: bold;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <div class="img"><img src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/e465cd03-dfe2-4772-ae29-bc0b27a3d9cb/33.png" alt=""></div>     
+        <div class="red1">
+            <div class="text1">truth</div>
+        </div>
+        <div class="red2">
+            <div class="text2">
+                abcdef<br>ghijklmnopqr<br>stuv<br>wxyz
+            </div>
+        </div>
+        <div class="black">
+            <div class="text3">
+                Saira Stencil 
+                <div class="text4">One</div>
+            </div>
+        </div>
+        <div class="wording">
+            is the first casualty 
+        </div>
+        <div class="name">
+            by <span class="bold"> Ian</span>
+        </div>
+        <div class="letters">
+            <div class="bold">ABCDEFGHIJ</div>
+            <div>KLMNOPQRSTUVWXYZ</div>
+        </div>
+        <!-- barcode -->
+        <!-- .barcode>.line.line$@0*10>.up>.codeblack^.dw>{$@0} -->
+        <div class="barcode">
+            <div class="line line0">
+                <div class="up">
+                    <div class="codeblack"></div>
+                </div>
+                <div class="dw">0</div>
+            </div>
+            <div class="line line1">
+                <div class="up">
+                    <div class="codeblack"></div>
+                </div>
+                <div class="dw">1</div>
+            </div>
+            <div class="line line2">
+                <div class="up">
+                    <div class="codeblack"></div>
+                </div>
+                <div class="dw">2</div>
+            </div>
+            <div class="line line3">
+                <div class="up">
+                    <div class="codeblack"></div>
+                </div>
+                <div class="dw">3</div>
+            </div>
+            <div class="line line4">
+                <div class="up">
+                    <div class="codeblack"></div>
+                </div>
+                <div class="dw">4</div>
+            </div>
+            <div class="line line5">
+                <div class="up">
+                    <div class="codeblack"></div>
+                </div>
+                <div class="dw">5</div>
+            </div>
+            <div class="line line6">
+                <div class="up">
+                    <div class="codeblack"></div>
+                </div>
+                <div class="dw">6</div>
+            </div>
+            <div class="line line7">
+                <div class="up">
+                    <div class="codeblack"></div>
+                </div>
+                <div class="dw">7</div>
+            </div>
+            <div class="line line8">
+                <div class="up">
+                    <div class="codeblack"></div>
+                </div>
+                <div class="dw">8</div>
+            </div>
+            <div class="line line9">
+                <div class="up">
+                    <div class="codeblack"></div>
+                </div>
+                <div class="dw">9</div>
+            </div>
+        </div>  
+    </div>
+</body>
+</html>

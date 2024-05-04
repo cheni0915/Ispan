@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>月曆製作</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <style>
+        * {
+            box-sizing: border-box;
+            
+            /* 宣告變數 */
+            /* --自訂名稱 */
+            --unit:calc( 100% / 7.5);
+        }
+        body {
+            min-height: 100svh;
+            min-width: 100svw;
+            padding: 0;
+            margin: 0;
+            /* 置中 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+
+        /* 星期幾製作 */
+        .date {
+            display: flex;
+            list-style-type: none;
+            
+        }
+        .date div {
+            margin-bottom: 50px;
+            outline: 1px solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+        }
+        
+        /* 由物件item先設定，再去推calendar容器怎麼設定 */
+        /* calendar 高度未設定，是由裡面item堆疊出來 */
+        .calendar {
+            display: flex;
+            flex-wrap: wrap;
+            width: 380px;
+            
+        }
+        .item {
+            outline: 1px solid ;
+            width: 50px;
+            height: 50px;
+            /* 對item內容文字進行控制 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* 控制每個月的第一天星期幾 */
+        /* 月曆1號位置向左推移 */
+        /* 星期日 */
+        .day0 {
+            margin-left: 0;
+        }
+        /* 星期一 */
+        .day1 {
+            /* margin-left: 50px; */
+            margin-left: calc(50px * 1);
+        }
+        .day2 {
+            margin-left: calc(50px * 2);
+        }
+        .day3 {
+            margin-left: calc(50px * 3);
+        }
+        .day4 {
+            margin-left: calc(50px * 4);
+        }
+        .day5 {
+            margin-left: calc(50px * 5);
+        }
+        .day6 {
+            margin-left: calc(50px * 6);
+        }
+
+        /* 按鈕 */
+        .btnDiv {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn {
+            padding: 20px 40px;
+            font-size: 20px;
+        }
+        .nextbtn {
+            margin-right: 25px;
+        }
+
+
+        /* 手機板設置 */
+        @media (max-width:768px){
+            .date {
+                margin-left: 30px;
+            }
+            .calendar {    
+                margin-left: 30px;
+                width:100svw;               
+            } 
+            .date div, .item {
+                background-color: rgb(235, 234, 250);
+                width: var(--unit);
+                aspect-ratio: 1;
+            }
+
+            .day1 {
+                margin-left:calc(var(--unit) * 1);
+            }
+            .day2 {
+                margin-left:calc(var(--unit) * 2);
+            }
+            .day3 {
+                margin-left:calc(var(--unit) * 3);
+            }
+            .day4 {
+                margin-left:calc(var(--unit) * 4);
+            }
+            .day5 {
+                margin-left:calc(var(--unit) * 5);
+            }
+            .day6 {
+                margin-left:calc(var(--unit) * 6);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HTML -->
+    <div class="container">
+        <div class="date">
+            <div>日</div>
+            <div>一</div>
+            <div>二</div>
+            <div>三</div>
+            <div>四</div>
+            <div>五</div>
+            <div>六</div>
+        </div>
+        <!-- .item.item$*30>{$} -->
+        <!-- <div class="item item1 day1">1</div> -->
+        <!-- <div class="item item${n} day1">${n}</div> -->
+        <div class="calendar"></div>
+        <div class="btnDiv">
+            <button class="btn prebtn" onclick="preMonth()">上個月</button>
+            <button class="btn nextbtn" onclick="nextMonth()">下個月</button>
+        </div>
+    </div>
+
+    <script>
+        let divCalendar = document.querySelector(".calendar");  
+        let thisYear =  new Date().getFullYear();
+        let thisMonth = new Date().getMonth();  // 0~11 索引值
+
+        // let dateNow = new Date(
+        //     new Date().getFullYear(),
+        //     new Date().getMonth(),
+        // 1);
+        // console.log(dateNow);                // Fri Dec 01 2023 00:00:00 GMT+0800 (台北標準時間)
+
+
+        // 顯示當月月曆
+        function showCalendar() {
+             // 必須把dayNow包入函式，這樣 month,year才能受到其他函式影響
+
+            let dayNow = new Date(thisYear, thisMonth, 1);
+            let firstDateDay = dayNow.getDay();                            // 每個月第一天星期幾
+            let totalDays = new Date(thisYear, thisMonth+1, 0).getDate();   // 取得每個月天數
+            
+            // 構築月曆格子內容
+            let htmlContent = "";
+            for(let i=0;i<totalDays;i++){
+                let n = i + 1;
+                htmlContent += `<div class="item item${n}">${n}</div>` 
+            }
+            // console.log(htmlContent);
+            // 內容放入 divCalendar 位置
+            divCalendar.innerHTML = htmlContent;
+            
+
+            // 抓出每個月第一天 html 位置
+            let divItem1 = document.querySelector(".item1");
+            //添加屬性 day$ => margin-left推移 => 位於星期幾
+            divItem1.classList.add(`day${firstDateDay}`);
+        };
+        showCalendar();
+        
+
+
+
+        // 按鈕功能
+        // 下個月
+        function nextMonth() {
+            thisMonth++;
+            if (thisMonth > 11) {
+                thisMonth = 0;
+                thisYear++;   
+            }
+            // console.log(thisMonth);
+            showCalendar();
+        }
+        // 上個月
+        function preMonth() {
+            thisMonth--;
+            if (thisMonth < 0) {
+                thisMonth = 11;
+                thisYear --;
+            }
+            showCalendar();
+        }
+    </script>   
+</body>
+</html>

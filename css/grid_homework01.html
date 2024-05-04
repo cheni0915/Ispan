@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            display: grid;
+            gap: 5px;
+            grid-template-columns: repeat(5, 60px); 
+            grid-template-rows: repeat(5,60px);
+            .item {
+                background-color: pink;
+                color: white;
+                font-size: 20px;
+                display: grid;
+                place-content: center;
+            }
+            .item7 {
+                grid-row-start: 2;
+                grid-row-end: 3;
+                grid-column-start: 5;
+                grid-column-end: 6;
+            }
+            .item8 {
+                grid-row-start: 3;
+                grid-row-end: 4;
+                grid-column-start: 1;
+                grid-column-end: 2;
+            }
+            .item9 {
+                grid-row-start: 3;
+                grid-row-end: 4;
+                grid-column-start: 5;
+                grid-column-end: 6;
+            }
+            .item10 {
+                grid-row-start: 4;
+                grid-row-end: 5;
+                grid-column-start: 1;
+                grid-column-end: 2;
+            }
+            .item11 {
+                grid-row-start: 4;
+                grid-row-end: 5;
+                grid-column-start: 5;
+                grid-column-end: 6;
+            }      
+            .item12 {
+                grid-row-start: 5;
+                grid-row-end: 6;
+                grid-column-start: 1;
+                grid-column-end: 2;
+            }
+            .item13 {
+                grid-row-start: 5;
+                grid-row-end: 6;
+                grid-column-start: 2;
+                grid-column-end: 3;
+            }
+            .item14 {
+                grid-row-start: 5;
+                grid-row-end: 6;
+                grid-column-start: 3;
+                grid-column-end: 4;
+            }
+
+            /* 
+            grid-area： grid-row-start / grid-column-start / 
+            grid-row-end / grid-column-end
+            */
+            /* grid-area: 2/5/3/6; */
+            .item15 {
+                grid-area:5/4/6/5;
+            }
+            .item16 {
+                grid-area: 5/5/6/6;
+            }
+
+        }
+    </style>
+    
+    <title>Grid</title>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+        <div class="item item6">6</div>
+        <div class="item item7">7</div>
+        <div class="item item8">8</div>
+        <div class="item item9">9</div>
+        <div class="item item10">10</div>
+        <div class="item item11">11</div>
+        <div class="item item12">12</div>
+        <div class="item item13">13</div>
+        <div class="item item14">14</div>
+        <div class="item item15">15</div>
+        <div class="item item16">16</div>
+    </div>     
+</body>
+</html>
